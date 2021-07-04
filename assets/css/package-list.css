@@ -1,0 +1,42 @@
+/*--------------------------------------------------------------
+# New
+--------------------------------------------------------------*/
+.package-img
+{
+  opacity: 1;
+  display: block;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  width: 300px;
+}
+
+.package-img:hover
+{
+  opacity: 0.3;
+}
+
+.package-item
+{
+  display: inline-flex;
+  margin-left: 70px;
+  margin-right: 70px;
+  margin-bottom: 40px;
+}
+
+.content
+{
+  margin-left: 50px;
+}
+
+.content > h4
+{
+  font-size: 20px;
+  color: black;
+  font-weight: 600;
+}
+
+.content > h3
+{
+  color: #66DE93;
+  font-weight: 1000;
+}
