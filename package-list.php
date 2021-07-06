@@ -39,8 +39,20 @@
 
   <main id="main">
 
-    <!--INCLUDE HEADER AND TOPBAR FILE-->
-    <?php include('assets/includes/breadcrumbs.php');?>
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Inner Page</h2>
+          <ol>
+            <li><a href="index.php">Home</a></li>
+            <li>Inner Page</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
 
     <section class="package-list-container">
 

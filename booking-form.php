@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Inner Page</title>
+  <title>Booking Form</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -22,6 +22,7 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/booking-form.css" rel="stylesheet">  
 
   <!-- =======================================================
   * Template Name: Green - v2.3.1
@@ -38,10 +39,22 @@
 
   <main id="main">
 
-    <!--INCLUDE HEADER AND TOPBAR FILE-->
-    <?php include('assets/includes/breadcrumbs.php');?>
+  <!-- ======= Breadcrumbs ======= -->
+  <section class="breadcrumbs">
+      <div class="container">
 
-    <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Booking For Package Name A</h2>
+          <ol>
+            <li><a href="index.php">Home</a></li>
+            <li>Inner Page</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <form action="" method="post" role="form" class="booking-form">
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="name">Your Name</label>
@@ -83,7 +96,7 @@
   </main><!-- End #main -->
 
   <!--INCLUDE FOOTER AND VENDORJS FILE-->
-  <?php include('assets/includes/header.php');?>
+  <?php include('assets/includes/footer.php');?>
 
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
