@@ -34,12 +34,12 @@
 <body>
 
   <!--INCLUDE HEADER AND TOPBAR FILE-->
-  <?php include "/project/assets/includes/header.php";?>
+  <?php include('assets/includes/header.php');?>
 
   <main id="main">
 
     <!--INCLUDE HEADER AND TOPBAR FILE-->
-    <?php include "/project/assets/includes/breadcrumbs.php";?>
+    <?php include('assets/includes/breadcrumbs.php');?>
 
     <!-- ======= Portfolio Details Section ======= -->
     <section id="portfolio-details" class="portfolio-details">
@@ -78,7 +78,7 @@
   </main><!-- End #main -->
 
   <!--INCLUDE FOOTER AND VENDORJS FILE-->
-  <?php include "/project/assets/includes/footer.php";?>
+  <?php include('assets/includes/footer.php');?>
 
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 

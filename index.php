@@ -33,7 +33,7 @@
 <body>
 
   <!--INCLUDE HEADER AND TOPBAR FILE-->
-  <?php include "/project/assets/includes/header.php";?>
+  <?php include('assets/includes/header.php');?>
 
   <!-- ======= Hero Section ======= -->
   <section id="hero">
@@ -246,7 +246,7 @@
           <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
         <div class="col-lg-3 cta-btn-container text-center">
-          <a class="cta-btn align-middle" href="#">Start Booking</a>
+          <a class="cta-btn align-middle" href="package-list.php">Choose A Package</a>
         </div>
       </div>
 
@@ -522,7 +522,7 @@
   </main><!-- End #main -->
 
   <!--INCLUDE FOOTER AND VENDORJS FILE-->
-  <?php include "/project/assets/includes/footer.php";?>
+  <?php include('assets/includes/footer.php');?>
 
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
