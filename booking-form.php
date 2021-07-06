@@ -55,43 +55,34 @@
     </section><!-- End Breadcrumbs -->
 
     <form action="" method="post" role="form" class="booking-form">
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="name">Your Name</label>
-                <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                <div class="validate"></div>
-              </div>
-              <div class="form-group col-md-6">
-                <label for="name">Your Email</label>
-                <input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Please enter a valid email" />
-                <div class="validate"></div>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="name">Subject</label>
-              <input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-              <div class="validate"></div>
-            </div>
-            <div class="form-group">
-              <label for="name">Message</label>
-              <textarea class="form-control" name="message" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
-              <div class="validate"></div>
-            </div>
-            <div class="mb-3">
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Your message has been sent. Thank you!</div>
-            </div>
-            <div class="text-center"><button type="submit">Send Message</button></div>
-          </form>
-
-    <section class="inner-page">
-      <div class="container">
-        <p>
-          Example inner page template
-        </p>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="name">Your Name</label>
+          <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+          <div class="validate"></div>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="name">Your Email</label>
+          <input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Please enter a valid email" />
+          <div class="validate"></div>
+        </div>
       </div>
-    </section>
+            
+      <div class="form-group">
+        <label for="name">Address</label>
+        <input type="text" class="form-control" name="address" id="address" data-rule="minlen:8" data-msg="Please enter at least 8 chars of subject" />
+        <div class="validate"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Select Hotel Branch</label>
+        <textarea class="form-control" name="message" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
+        <div class="validate"></div>
+      </div>
+
+            <div class="text-center"><button type="submit">Create Booking</button></div>
+
+          </form>
 
   </main><!-- End #main -->
 

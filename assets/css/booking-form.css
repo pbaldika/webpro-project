@@ -2,3 +2,13 @@
 {
     margin: 60px 60px 0px 60px;
 }
+
+.booking-form button[type="submit"] 
+{
+    background: #5cb874;
+    border: 0;
+    padding: 10px 24px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 4px;
+  }
