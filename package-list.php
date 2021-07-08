@@ -54,7 +54,7 @@
       </div>
     </section><!-- End Breadcrumbs -->
 
-    <section class="package-list-container">
+    <section class="container">
 
       <div class="package-item">
         <a href="package-details.html">
