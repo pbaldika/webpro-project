@@ -33,17 +33,15 @@
             <li class="drop-down"><a href="">Locations</a>
             <ul>
                 <li class="drop-down"><a href="#">Kuala Lumpur</a>
-                <ul>
-                    <li><a href="#">Hilltop</a></li>
-                    <li><a href="#">Motel</a></li>
-                    <li><a href="#">Villas</a></li>
-                    <li><a href="#">Resort Worlds</a></li>
-                    <li><a href="#">Lake Place</a></li>
-                </ul>
+                    <ul>
+                        <li><a href="#">Hilltop</a></li>
+                        <li><a href="#">Motel</a></li>
+                        <li><a href="#">Villas</a></li>
+                        <li><a href="#">Resort Worlds</a></li>
+                        <li><a href="#">Lake Place</a></li>
+                    </ul>
                 </li>
-                <li><a href="#">Petaling Jaya</a></li>
-                <li><a href="#">Johor Bahru</a></li>
-                <li><a href="#"></a></li>
+                <!--<li><a href="#"></a></li>-->
             </ul>
             </li>
         </ul>
