@@ -29,7 +29,7 @@
             <li><a href="package-list.php">Packages</a></li>
             <li><a href="services.php">Services</a></li>
             <li><a href="about.php">About Us</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="contact.php">Contact</a></li>
             <li class="drop-down"><a href="">Locations</a>
             <ul>
                 <li class="drop-down"><a href="#">Kuala Lumpur</a>
