@@ -30,7 +30,7 @@
             <li><a href="services.php">Services</a></li>
             <li><a href="about.php">About Us</a></li>
             <li><a href="contact.php">Contact</a></li>
-            <li class="drop-down"><a href="">Locations</a>
+            <li class="drop-down"><a href="hotel-list.php">Locations</a>
             <ul>
                 <li class="drop-down"><a href="#">Kuala Lumpur</a>
                     <ul>
