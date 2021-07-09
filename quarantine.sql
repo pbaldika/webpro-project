@@ -57,9 +57,13 @@ CREATE TABLE `hotels` (
   `htl_name` varchar(200) DEFAULT NULL,
   `htl_location` varchar(100) DEFAULT NULL,
   `htl_image` varchar(100) DEFAULT NULL,
-  `creation_date` timestamp NULL DEFAULT NULL,
-  `update_date` timestamp NULL DEFAULT NULL
+  `creation_date` timestamp NULL DEFAULT current_timestamp(),
+  `update_date` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp();
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `hotels` (`htl_id`, `htl_name`, `htl_location`, `htl_image`, `creation_date`, `updation_date`) VALUES
+(1, 'Central Hotel KLIA', 'KLIA Terminal 2', 'portfolio-2.jpg', '2021-07-09 06:03:00', NULL),
+(2, 'Central Hotel Sepang', 'Sepang', 'portfolio-3.jpg', '2021-07-09 06:03:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -138,7 +142,4 @@ COMMIT;
 
 
 
-INSERT INTO `hotels` (`htl_id`, `htl_name`, `htl_location`, `htl_image`, `creation_date`, `updation_date`) VALUES
-(1, 'Central Hotel KLIA', 'KLIA Terminal 2', 'portfolio-2.jpg', '2021-07-09 06:03:00', NULL),
-(2, 'Central Hotel Sepang', 'Sepang', 'portfolio-3.jpg', '2021-07-09 06:03:00', NULL);
 
