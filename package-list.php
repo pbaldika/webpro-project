@@ -61,11 +61,11 @@
           <img src="assets/img/portfolio/portfolio-7.jpg" class="package-img">
         </a>
         <div class="content">
-          <h4>Package name</h4>
+          <h4>Package name RM99.99</h4>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga voluptatibus eaque culpa, 
             dolores iste illum dolore at hic et maxime, saepe adipisci veniam quibusdam molestiae ea 
             laudantium odit numquam. Rerum.</p>
-          <h3>RM 99.99</h3>
+          <br>
         </div>
       </div>
 
@@ -74,11 +74,11 @@
           <img src="assets/img/portfolio/portfolio-7.jpg" class="package-img">
         </a>
         <div class="content">
-          <h4>Package name</h4>
+          <h4>Package name RM99.99</h4>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga voluptatibus eaque culpa, 
             dolores iste illum dolore at hic et maxime, saepe adipisci veniam quibusdam molestiae ea 
             laudantium odit numquam. Rerum.</p>
-          <h3>RM 99.99</h3>
+          <br>
         </div>
       </div>
 
