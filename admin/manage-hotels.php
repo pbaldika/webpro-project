@@ -66,7 +66,7 @@ if (strlen($_SESSION['alogin']) == 0) {
             <div class="col-sm-3 sidenav hidden-xs">
                 <h2>Logo</h2>
                 <ul class="nav nav-pills nav-stacked">
-                    <li><a href="#section1">Dashboard</a></li>
+                    <li><a href="dashboard.php">Dashboard</a></li>
                     <li class="active"><a href="manage-hotels.php">Manage Hotels</a></li>
                     <li><a href="manage-packages.php">Manage Packages</a></li>
                     <li><a href="manage-bookings.php">Manage Bookingso</a></li>
@@ -76,7 +76,7 @@ if (strlen($_SESSION['alogin']) == 0) {
 
             <div class="col-sm-9">
                 <div class="well">
-                    <h4>Dashboard</h4>
+                    <h4>Manage Hotel</h4>
                     <p>Some text..</p><br>
                     <table class="table table-bordered">
                         <thead>
@@ -104,7 +104,7 @@ if (strlen($_SESSION['alogin']) == 0) {
                                         <td><?php echo htmlentities($result->htl_location); ?></td>
                                         <td><?php echo htmlentities($result->htl_image); ?></td>
                                         <td><?php echo htmlentities($result->creation_date); ?></td>
-                                        <td><a href="update-hotel.php?pid=<?php echo htmlentities($result->htl_id); ?>"><button type="button" class="btn btn-primary btn-block">View Details</button></a></td>
+                                        <td><a href="update-hotel.php?hid=<?php echo htmlentities($result->htl_id); ?>"><button type="button" class="btn btn-primary btn-block">View Details</button></a></td>
                                     </tr>
                             <?php $cnt = $cnt + 1;
                                 }
