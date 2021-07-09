@@ -28,6 +28,7 @@ include("includes/config.php");
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/hotel-list.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Green - v2.3.1
@@ -61,17 +62,14 @@ include("includes/config.php");
 
     <section class="hotel-list">
         <div class="container">
-            <?php 
-            $sql = "SELECT * FROM hotels";
-            $query = $dbh->prepare($sql);
-            $query->execute();
-            $results = $query->fetchAll(PDO::FETCH_OBJ);
-            $cnt = 1;
-            if($query->rowCount() > 0)
-            {
-                foreach($results as $results)
-                { ?>
-                    <div class="hotel-item">
+            <?php $sql = "SELECT * from hotels";
+			$query = $dbh->prepare($sql);
+			$query->execute();
+			$results = $query->fetchAll(PDO::FETCH_OBJ);
+			$cnt = 1;
+			if ($query->rowCount() > 0) {
+				foreach ($results as $result) {	?>
+					<<div class="hotel-item">
                         <a href="">
                             <img src="assets/img/<?php echo htmlentities($result->htl_img); ?>" class="hotel-img">
                         </a>
@@ -80,8 +78,8 @@ include("includes/config.php");
                             <h5>Hotel Location: <?php echo htmlentities($result->htl_location); ?></h5>
                         </div>
                     </div>
-            <?php }
-            } ?>
+			<?php }
+			} ?>
         </div>
     </section>
 
@@ -95,3 +93,13 @@ include("includes/config.php");
 </body>
 
 </html>
+
+<div class="hotel-item">
+<a href="">
+<img src="assets/img/<?php echo htmlentities($result->htl_img); ?>" class="hotel-img">
+</a>
+<div class="content">
+<h4>Hotel Name: <?php echo htmlentities($result->htl_name); ?></h4>
+<h5>Hotel Location: <?php echo htmlentities($result->htl_location); ?></h5>
+</div>
+</div>
