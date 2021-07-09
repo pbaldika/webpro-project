@@ -71,11 +71,13 @@ include('assets/includes/config.php');
                     foreach ($results as $result) { ?>
                         <div class="hotel-item">
                             <a href="">
-                                <img src="assets/img/portfolio/<?php echo htmlentities($result->htl_img); ?>" class="hotel-img">
+                                <img src="assets/img/portfolio/<?php echo htmlentities($result->htl_image); ?>" class="hotel-img">
                             </a>
                             <div class="content">
                                 <h4>Hotel Name: <?php echo htmlentities($result->htl_name); ?></h4>
                                 <h6>Hotel Location: <?php echo htmlentities($result->htl_location); ?></h6>
+                                <br>
+                                
                             </div>
                         </div>
                 <?php }
