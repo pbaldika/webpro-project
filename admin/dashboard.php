@@ -38,9 +38,9 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Dashboard</a></li>
-        <li><a href="#">Age</a></li>
-        <li><a href="#">Gender</a></li>
-        <li><a href="#">Geo</a></li>
+        <li><a href="manage-hotels.php">Manage Hotels</a></li>
+        <li><a href="manage-packages.php">Manage Packages</a></li>
+        <li><a href="manage-bookings.php">Manage Bookings</a></li>
       </ul>
     </div>
   </div>
@@ -52,9 +52,9 @@
       <h2>Logo</h2>
       <ul class="nav nav-pills nav-stacked">
         <li class="active"><a href="#section1">Dashboard</a></li>
-        <li><a href="#section2">Age</a></li>
-        <li><a href="#section3">Gender</a></li>
-        <li><a href="#section3">Geo</a></li>
+        <li><a href="manage-hotels.php">Manage Hotels</a></li>
+        <li><a href="manage-packages.php">Manage Packages</a></li>
+        <li><a href="manage-bookings.php">Manage Bookingso</a></li>
       </ul><br>
     </div>
     <br>
