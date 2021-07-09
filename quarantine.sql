@@ -27,6 +27,9 @@ CREATE TABLE `admin` (
   `update_date` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+INSERT INTO `admin` (`id`, `username`, `password`, `update_date`) VALUES
+(1, 'admin', 'password', NULL);
+
 -- --------------------------------------------------------
 
 --
