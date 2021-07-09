@@ -43,3 +43,6 @@ CREATE TABLE "hotels"
     "creation_date" timestamp NULL DEFAULT current_timestamp(),
     "updation_date" timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
 )
+
+INSERT INTO "hotels" ("htl_id", "htl_name", "htl_location", "htl_image", "creation_date", "updation_date") VALUES
+(1, "Central Hotel KLIA", "KLIA Terminal 2", "portfolio-1.jpg", "2021-07-09 06:03:00", NULL)
