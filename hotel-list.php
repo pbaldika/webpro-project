@@ -77,7 +77,7 @@ include('assets/includes/config.php');
                                 <h4>Hotel Name: <?php echo htmlentities($result->htl_name); ?></h4>
                                 <h6>Hotel Location: <?php echo htmlentities($result->htl_location); ?></h6>
                                 <br>
-                                
+                                <a href="" class="goto-button">go to website</a>
                             </div>
                         </div>
                 <?php }
