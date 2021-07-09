@@ -39,28 +39,6 @@ if (strlen($_SESSION['alogin']) == 0) {
 </head>
 
 <body>
-
-    <nav class="navbar navbar-inverse visible-xs">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Logo</a>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav">
-                    <li><a href="dashboard.php">Dashboard</a></li>
-                    <li class="active"><a href="manage-hotels.php">Manage Hotels</a></li>
-                    <li><a href="manage-packages.php">Manage Packages</a></li>
-                    <li><a href="manage-bookings.php">Manage Bookings</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
     <div class="container-fluid">
         <div class="row content">
             <div class="col-sm-3 sidenav hidden-xs">
@@ -69,15 +47,14 @@ if (strlen($_SESSION['alogin']) == 0) {
                     <li><a href="dashboard.php">Dashboard</a></li>
                     <li class="active"><a href="manage-hotels.php">Manage Hotels</a></li>
                     <li><a href="manage-packages.php">Manage Packages</a></li>
-                    <li><a href="manage-bookings.php">Manage Bookingso</a></li>
+                    <li><a href="manage-bookings.php">Manage Bookings</a></li>
                 </ul><br>
             </div>
             <br>
 
             <div class="col-sm-9">
                 <div class="well">
-                    <h4>Manage Hotel</h4>
-                    <p>Some text..</p><br>
+                    <h4>Manage Hotels</h4><br>
                     <table class="table table-bordered">
                         <thead>
                             <tr>

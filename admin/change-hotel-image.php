@@ -5,16 +5,16 @@ include('includes/config.php');
 if (strlen($_SESSION['alogin']) == 0) {
     header('location:dashboard.php');
 } else {
-    $pid = intval($_GET['hid']);
+    $imgid = intval($_GET['imgid']);
     if (isset($_POST['submit'])) {
-        $hname = $_POST['hotelname'];
-        $hlocation = $_POST['hotellocation'];
+
         $himage = $_FILES["hotelimage"]["name"];
-        $sql = "update hotels set htl_name=:hname, htl_location=:hlocation where htl_id=:hid";
+        move_uploaded_file($_FILES["hotelimage"]["tmp_name"], "img/" . $_FILES["hotelimage"]["name"]);
+        $sql = "update hotels set htl_image=:himage where htl_id=:imgid";
         $query = $dbh->prepare($sql);
-        $query->bindParam(':hname', $pname, PDO::PARAM_STR);
-        $query->bindParam(':hlocation', $hlocation, PDO::PARAM_STR);
-        $query->bindParam(':hid', $hid, PDO::PARAM_STR);
+
+        $query->bindParam(':imgid', $imgid, PDO::PARAM_STR);
+        $query->bindParam(':himage', $himage, PDO::PARAM_STR);
         $query->execute();
         $msg = "Hotel Updated Successfully";
     }
@@ -23,7 +23,7 @@ if (strlen($_SESSION['alogin']) == 0) {
     <html lang="en">
 
     <head>
-        <title>Update Hotel</title>
+        <title>Change Image</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -66,56 +66,42 @@ if (strlen($_SESSION['alogin']) == 0) {
 
                 <div class="col-sm-9">
                     <div class="well">
-                        <h4>Update Hotel</h4><br>
+                        <h4>Change Hotel Image</h4><br>
                         <?php if ($error) { ?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } else if ($msg) { ?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php } ?>
                         <div class="tab-content">
                             <div class="tab-pane active" id="horizontal-form">
-
-                                <?php
-                                $hid = intval($_GET['hid']);
-                                $sql = "SELECT * from hotels where htl_id=:hid";
-                                $query = $dbh->prepare($sql);
-                                $query->bindParam(':hid', $hid, PDO::PARAM_STR);
-                                $query->execute();
-                                $results = $query->fetchAll(PDO::FETCH_OBJ);
-                                $cnt = 1;
-                                if ($query->rowCount() > 0) {
-                                    foreach ($results as $result) { ?>
-
-                                        <form class="form-horizontal" name="hotel" method="post" enctype="multipart/form-data">
-                                            <div class="form-group">
-                                                <label for="focusedinput" class="col-sm-2 control-label">Hotel Name</label>
-                                                <div class="col-sm-8">
-                                                    <input type="text" class="form-control1" name="hotelname" id="hotelname" placeholder="name of hotel" value="<?php echo htmlentities($result->htl_name); ?>" required>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="focusedinput" class="col-sm-2 control-label">Hotel Location</label>
-                                                <div class="col-sm-8">
-                                                    <input type="text" class="form-control1" name="hotellocation" id="hotellocation" placeholder="location of hotel" value="<?php echo htmlentities($result->htl_location); ?>" required>
-                                                </div>
-                                            </div>
+                                <form class="form-horizontal" name="hotel" method="post" enctype="multipart/form-data">
+                                    <?php
+                                    $imgid = intval($_GET['imgid']);
+                                    $sql = "SELECT htl_image from hotels where htl_id=:imgid";
+                                    $query = $dbh->prepare($sql);
+                                    $query->bindParam(':imgid', $imgid, PDO::PARAM_STR);
+                                    $query->execute();
+                                    $results = $query->fetchAll(PDO::FETCH_OBJ);
+                                    $cnt = 1;
+                                    if ($query->rowCount() > 0) {
+                                        foreach ($results as $result) { ?>
                                             <div class="form-group">
                                                 <label for="focusedinput" class="col-sm-2 control-label">Hotel Image</label>
                                                 <div class="col-sm-8">
-                                                    <img src="img/<?php echo htmlentities($result->htl_image); ?>" width="200">&nbsp;&nbsp;&nbsp;<a href="change-hotel-image.php?imgid=<?php echo htmlentities($result->htl_id); ?>">Change Image</a>
+                                                    <img src="img/<?php echo htmlentities($result->htl_image); ?>" width="200">
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="focusedinput" class="col-sm-2 control-label">Last Updation Date</label>
+                                                <label for="focusedinput" class="col-sm-2 control-label">New Image</label>
                                                 <div class="col-sm-8">
-                                                    <?php echo htmlentities($result->update_date); ?>
+                                                    <input type="file" name="hotelimage" id="hotelimage" required>
                                                 </div>
                                             </div>
                                     <?php }
-                                } ?>
+                                    } ?>
+
                                     <div class="row">
                                         <div class="col-sm-8 col-sm-offset-2">
                                             <button type="submit" name="submit" class="btn-primary btn">Update</button>
                                         </div>
                                     </div>
-
                             </div>
                         </div>
                     </div>
