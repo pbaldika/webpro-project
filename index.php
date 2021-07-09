@@ -1,3 +1,9 @@
+<?php
+session_start();
+error_reporting(0);
+include('assets/includes/config.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -60,7 +66,7 @@
             <div class="container">
               <h2 class="animate__animated animate__fadeInDown">Our Locations</h2>
               <p class="animate__animated animate__fadeInUp">Various branches of our hotel are available to stay for your quarantine period.</p>
-              <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+              <a href="hotel-list.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
             </div>
           </div>
         </div>
