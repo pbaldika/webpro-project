@@ -28,7 +28,7 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `admin` (`id`, `username`, `password`, `update_date`) VALUES
-(1, 'admin', 'password', NULL);
+(1, 'admin', 'f925916e2754e5e03f75dd58a5733251', NULL);
 
 -- --------------------------------------------------------
 
