@@ -131,45 +131,8 @@ include('assets/includes/config.php');
 
       </div>
     </section>
-
-
-        <div>
-          <div>
-            <img src="assets/pkg_image<?php echo htmlentities($result->pkg_image); ?>">
-          </div>
-          <div>
-            <h2><?php echo htmlentities($result->pkg_name); ?></h2>
-            <p>#PKG-<?php echo htmlentities($result->pkg_id); ?></p>
-            <p><b>Package Type :</b> <?php echo htmlentities($result->pkg_type); ?></p>
-            <p><b>Package Features :</b> <?php echo htmlentities($result->pkg_features); ?></p>
-            <p><b>Features</b> <?php echo htmlentities($result->PackageFetures); ?></p>
-            <div>
-              <div>
-                <label>From</label>
-                <input class="date" id="datepicker" type="text" placeholder="dd-mm-yyyy" name="fromdate" required="">
-              </div>
-              <div>
-                <label class="inputLabel">To</label>
-                <input class="date" id="datepicker1" type="text" placeholder="dd-mm-yyyy" name="todate" required="">
-              </div>
-            </div>
-            <div></div>
-            <div>
-              <p>Grand Total</p>
-              <h3>USD.800</h3>
-            </div>
-          </div>
-          <h3>Package Details</h3>
-          <p style="padding-top: 1%"><?php echo htmlentities($result->PackageDetails); ?> </p>
-        </div>
-
     <?php }
     } ?>
-    <!-- coba php end -->
-
-
-
-
   </main><!-- End #main -->
 
   <!--INCLUDE FOOTER AND VENDORJS FILE-->
