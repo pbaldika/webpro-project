@@ -3,21 +3,30 @@ session_start();
 error_reporting(0);
 include('includes/config.php');
 if (strlen($_SESSION['alogin']) == 0) {
-    header('location:dashboard.php');
+	header('location:dashboard.php');
 } else {
-    $pid = intval($_GET['hid']);
-    if (isset($_POST['submit'])) {
-        $hname = $_POST['hotelname'];
-        $hlocation = $_POST['hotellocation'];
-        $himage = $_FILES["hotelimage"]["name"];
-        $sql = "update hotels set htl_name=:hname, htl_location=:hlocation where htl_id=:hid";
-        $query = $dbh->prepare($sql);
-        $query->bindParam(':hname', $pname, PDO::PARAM_STR);
-        $query->bindParam(':hlocation', $hlocation, PDO::PARAM_STR);
-        $query->bindParam(':hid', $hid, PDO::PARAM_STR);
-        $query->execute();
-        $msg = "Hotel Updated Successfully";
-    }
+	$pid = intval($_GET['pid']);
+	if (isset($_POST['submit'])) {
+		$pname = $_POST['packagename'];
+		$ptype = $_POST['packagetype'];
+        $photel = $_POST['packagehotel'];
+		$pprice = $_POST['packageprice'];
+		$pfeatures = $_POST['packagefeatures'];
+		$pdetails = $_POST['packagedetails'];
+		$pimage = $_FILES["packageimage"]["name"];
+		$sql = "update packages set pkg_name=:pname,pkg_type=:ptype,htl_id=:photel,pkg_price=:pprice,pkg_features=:pfeatures,pkg_details=:pdetails where pkg_id=:pid";
+		$query = $dbh->prepare($sql);
+		$query->bindParam(':pname', $pname, PDO::PARAM_STR);
+		$query->bindParam(':ptype', $ptype, PDO::PARAM_STR);
+        $query->bindParam(':photel', $photel, PDO::PARAM_STR);
+		$query->bindParam(':pprice', $pprice, PDO::PARAM_STR);
+		$query->bindParam(':pfeatures', $pfeatures, PDO::PARAM_STR);
+		$query->bindParam(':pdetails', $pdetails, PDO::PARAM_STR);
+		$query->bindParam(':pid', $pid, PDO::PARAM_STR);
+		$query->execute();
+		$msg = "Package Updated Successfully";
+	}
+
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -39,6 +48,7 @@ if (strlen($_SESSION['alogin']) == 0) {
             .sidenav {
                 background-color: #f1f1f1;
                 height: 100%;
+                width: auto;
             }
 
             /* On small screens, set height to 'auto' for the grid */
@@ -72,36 +82,59 @@ if (strlen($_SESSION['alogin']) == 0) {
                             <div class="tab-pane active" id="horizontal-form">
 
                                 <?php
-                                $hid = intval($_GET['hid']);
-                                $sql = "SELECT * from hotels where htl_id=:hid";
+                                $hid = intval($_GET['pid']);
+                                $sql = "SELECT * from packages where pkg_id=:pid";
                                 $query = $dbh->prepare($sql);
-                                $query->bindParam(':hid', $hid, PDO::PARAM_STR);
+                                $query->bindParam(':pid', $pid, PDO::PARAM_STR);
                                 $query->execute();
                                 $results = $query->fetchAll(PDO::FETCH_OBJ);
                                 $cnt = 1;
                                 if ($query->rowCount() > 0) {
                                     foreach ($results as $result) { ?>
 
-                                        <form class="form-horizontal" name="hotel" method="post" enctype="multipart/form-data">
+                                        <form class="form-horizontal" name="package" method="post" enctype="multipart/form-data">
                                             <div class="form-group">
-                                                <label for="focusedinput" class="col-sm-2 control-label">Hotel Name</label>
+                                                <label for="focusedinput" class="col-sm-2 control-label">Package Name</label>
                                                 <div class="col-sm-8">
-                                                    <input type="text" class="form-control1" name="hotelname" id="hotelname" placeholder="name of hotel" value="<?php echo htmlentities($result->htl_name); ?>" required>
+                                                    <input type="text" class="form-control1" name="packagename" id="packagename" placeholder="name of package" value="<?php echo htmlentities($result->pkg_name); ?>" required>
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="focusedinput" class="col-sm-2 control-label">Hotel Location</label>
+                                                <label for="focusedinput" class="col-sm-2 control-label">Package Type</label>
                                                 <div class="col-sm-8">
-                                                    <input type="text" class="form-control1" name="hotellocation" id="hotellocation" placeholder="location of hotel" value="<?php echo htmlentities($result->htl_location); ?>" required>
+                                                    <input type="text" class="form-control1" name="packagetype" id="packagetype" placeholder="standard/premier/luxury" value="<?php echo htmlentities($result->pkg_type); ?>" required>
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="focusedinput" class="col-sm-2 control-label">Hotel Image</label>
+                                                <label for="focusedinput" class="col-sm-2 control-label">Hotel Id</label>
                                                 <div class="col-sm-8">
-                                                    <img src="img/<?php echo htmlentities($result->htl_image); ?>" width="200">&nbsp;&nbsp;&nbsp;<a href="change-hotel-image.php?imgid=<?php echo htmlentities($result->htl_id); ?>">Change Image</a>
+                                                    <input type="text" class="form-control1" name="packagehotel" id="packagehotel" placeholder="id of hotel associated with package" value="<?php echo htmlentities($result->htl_id); ?>" required>
                                                 </div>
                                             </div>
-
+                                            <div class="form-group">
+                                                <label for="focusedinput" class="col-sm-2 control-label">Package Price</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control1" name="packageprice" id="packageprice" placeholder="price of package" value="<?php echo htmlentities($result->pkg_price); ?>" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="focusedinput" class="col-sm-2 control-label">Package Features</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control1" name="packagefeatures" id="packagefeatures" placeholder="features of the package" value="<?php echo htmlentities($result->pkg_features); ?>" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="focusedinput" class="col-sm-2 control-label">Package Details</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control1" name="packagedetails" id="packagedetails" placeholder="details of the package" value="<?php echo htmlentities($result->pkg_details); ?>" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="focusedinput" class="col-sm-2 control-label">Package Image</label>
+                                                <div class="col-sm-8">
+                                                    <img src="img/<?php echo htmlentities($result->pkg_image); ?>" width="200">&nbsp;&nbsp;&nbsp;<a href="change-pkg-image.php?imgid=<?php echo htmlentities($result->pkg_image); ?>">Change Image</a>
+                                                </div>
+                                            </div>
                                             <div class="form-group">
                                                 <label for="focusedinput" class="col-sm-2 control-label">Last Updation Date</label>
                                                 <div class="col-sm-8">
