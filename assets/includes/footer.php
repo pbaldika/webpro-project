@@ -2,24 +2,23 @@
     <!-- ======= Footer ======= -->
     <footer id="footer">
         <div class="container">
-        <h3>Green</h3>
-        <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
+        <h3>SAFESTAY</h3>
+        <p>stay safe with SafeStay</p>
         <div class="social-links">
-            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-            <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-            <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            <a href="https://twitter.com/traveloka" class="twitter"><i class="bx bxl-twitter"></i></a>
+            <a href="https://www.facebook.com/search/top?q=traveloka" class="facebook"><i class="bx bxl-facebook"></i></a>
+            <a href="https://www.instagram.com/traveloka/" class="instagram"><i class="bx bxl-instagram"></i></a>
+            
         </div>
         <div class="copyright">
-            &copy; Copyright <strong><span>Green</span></strong>. All Rights Reserved
+            &copy; Copyright <strong><span>SAFESTAY</span></strong>. All Rights Reserved
         </div>
         <div class="credits">
             <!-- All the links in the footer should remain intact. -->
             <!-- You can delete the links only if you purchased the pro version. -->
             <!-- Licensing information: https://bootstrapmade.com/license/ -->
             <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/green-free-one-page-bootstrap-template/ -->
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            
         </div>
         </div>
     </footer><!-- End Footer -->
