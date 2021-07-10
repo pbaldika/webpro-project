@@ -23,7 +23,7 @@ if (strlen($_SESSION['alogin']) == 0) {
     <html lang="en">
 
     <head>
-        <h2>System Admin</h2>
+        <title>Update Hotel</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -54,7 +54,7 @@ if (strlen($_SESSION['alogin']) == 0) {
         <div class="container-fluid">
             <div class="row content">
                 <div class="col-sm-3 sidenav hidden-xs">
-                    <h2>Logo</h2>
+                    <h2>System Admin</h2>
                     <ul class="nav nav-pills nav-stacked">
                         <li><a href="dashboard.php">Dashboard</a></li>
                         <li class="active"><a href="manage-hotels.php">Manage Hotels</a></li>
