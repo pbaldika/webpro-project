@@ -77,7 +77,7 @@ if (strlen($_SESSION['alogin']) == 1) {
 
                 <div class="col-sm-9">
                     <div class="well">
-                        <h4>Manage Bookings</h4>
+                        <h4>Manage Bookings</h4><br>
                         <table class="table table-bordered">
                             <thead>
                                 <tr>

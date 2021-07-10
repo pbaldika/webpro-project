@@ -45,8 +45,42 @@
 
             <div class="col-sm-9">
                 <div class="well">
-                    <h4>Dashboard</h4>
-                    <p>Some text..</p>
+                    <h4>Manage Packages</h4><br>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Location</th>
+                                <th>Price</th>
+                                <th>Creation Date</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php $sql = "SELECT * from TblTourPackages";
+                            $query = $dbh->prepare($sql);
+                            //$query -> bindParam(':city', $city, PDO::PARAM_STR);
+                            $query->execute();
+                            $results = $query->fetchAll(PDO::FETCH_OBJ);
+                            $cnt = 1;
+                            if ($query->rowCount() > 0) {
+                                foreach ($results as $result) {                ?>
+                                    <tr>
+                                        <td><?php echo htmlentities($cnt); ?></td>
+                                        <td><?php echo htmlentities($result->PackageName); ?></td>
+                                        <td><?php echo htmlentities($result->PackageType); ?></td>
+                                        <td><?php echo htmlentities($result->PackageLocation); ?></td>
+                                        <td>$<?php echo htmlentities($result->PackagePrice); ?></td>
+                                        <td><?php echo htmlentities($result->Creationdate); ?></td>
+                                        <td><a href="update-package.php?pid=<?php echo htmlentities($result->PackageId); ?>"><button type="button" class="btn btn-primary btn-block">View Details</button></a></td>
+                                    </tr>
+                            <?php $cnt = $cnt + 1;
+                                }
+                            } ?>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
