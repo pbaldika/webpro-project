@@ -18,6 +18,7 @@
         .sidenav {
             background-color: #f1f1f1;
             height: 100%;
+            width: auto;
         }
 
         /* On small screens, set height to 'auto' for the grid */

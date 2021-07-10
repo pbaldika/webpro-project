@@ -27,6 +27,7 @@ if (strlen($_SESSION['alogin']) == 0) {
         .sidenav {
             background-color: #f1f1f1;
             height: 100%;
+            width: auto;
         }
 
         /* On small screens, set height to 'auto' for the grid */
@@ -81,7 +82,7 @@ if (strlen($_SESSION['alogin']) == 0) {
                                         <td><?php echo htmlentities($result->htl_location); ?></td>
                                         <td><?php echo htmlentities($result->htl_image); ?></td>
                                         <td><?php echo htmlentities($result->creation_date); ?></td>
-                                        <td><a href="update-hotel.php?hid=<?php echo htmlentities($result->htl_id); ?>"><button type="button" class="btn btn-primary btn-block">View Details</button></a></td>
+                                        <td><a href="update-hotel.php?hid=<?php echo htmlentities($result->htl_id); ?>"><button type="button" class="btn btn-primary btn-block">Edit</button></a></td>
                                     </tr>
                             <?php $cnt = $cnt + 1;
                                 }
