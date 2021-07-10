@@ -97,10 +97,8 @@ include('assets/includes/config.php');
 
         <div class="portfolio-details-container">
 
-          <div class="owl-carousel portfolio-details-carousel">
-            <img src="assets/img/portfolio/portfolio-details-1.jpg" class="img-fluid" alt="">
-            <img src="assets/img/portfolio/portfolio-details-2.jpg" class="img-fluid" alt="">
-            <img src="assets/img/portfolio/portfolio-details-3.jpg" class="img-fluid" alt="">
+          <div>
+            <img src="assets/img/pkg_image/<?php echo htmlentities($result->pkg_image); ?>" class="img-fluid" alt="">
           </div>
 
           <div class="portfolio-info">
@@ -108,8 +106,6 @@ include('assets/includes/config.php');
             <ul>
               <li><strong>Price:</strong> <?php echo htmlentities($result->pkg_price); ?> MYR</li>
               <li><strong>Type:</strong> <?php echo htmlentities($result->pkg_type); ?></li>
-              <li><strong>Project date</strong>: 01 March, 2020</li>
-              <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
             </ul>
           </div>
 
