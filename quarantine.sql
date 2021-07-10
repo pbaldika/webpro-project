@@ -40,13 +40,21 @@ DROP TABLE IF EXISTS `booking`;
 CREATE TABLE `booking` (
   `booking_id` int(11) NOT NULL,
   `pkg_id` int(11) DEFAULT NULL,
-  `user_email` varchar(100) DEFAULT NULL,
+  `full_name` varchar(100) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `phone` char(10) DEFAULT NULL,
   `in_date` varchar(100) DEFAULT NULL,
   `out_date` varchar(100) DEFAULT NULL,
   `booking_date` timestamp NULL DEFAULT NULL,
   `status` int(11) DEFAULT NULL,
   `update_date` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `booking` (`booking_id`, `pkg_id`, `full_name`, `email`, `phone`, `in_date`, `out_date`, `booking_date`, `status`, `udpate_date`) VALUES
+(1, 1, 'Ahmad', 'ahmad@gmail.com', '0122222222', '2020-07-11', '2020-07-18', '2020-07-08 06:38:36', 1, '2021-06-17 05:14:01'),
+(2, 1, 'Tanvir', 'tanvir@gmail.com', '0133333333', '2020-07-10', '2020-07-13', '2020-07-08 06:43:25', 1, '2021-06-17 05:13:54'),
+(3, 1, 'Arinie', 'arinie@gmail.com', '0144444444', '2020-07-11', '2020-07-15', '2020-07-08 06:44:39', 0, '2021-06-17 05:13:22'),
+(4, 1, 'Atiqah', 'atiqah@gmail.com', '0155555555', '2021-06-17', '2021-06-30', '2021-06-17 05:03:15', 0, '2021-06-17 05:08:41');
 
 -- --------------------------------------------------------
 
