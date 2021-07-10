@@ -1,3 +1,11 @@
+
+<!-- To connect with server -->
+<?php
+session_start();
+error_reporting(0);
+include('assets/includes/config.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,7 +43,7 @@
 <body>
 
   <!--INCLUDE HEADER AND TOPBAR FILE-->
-  <?php include('assets/includes/header.php');?>
+  <?php include('assets/includes/header.php'); ?>
 
   <main id="main">
 
@@ -54,42 +62,42 @@
       </div>
     </section><!-- End Breadcrumbs -->
 
-    <section class="container">
 
-      <div class="package-item">
-        <a href="package-details.html">
-          <img src="assets/img/portfolio/portfolio-7.jpg" class="package-img">
-        </a>
-        <div class="content">
-          <h4>Package name RM99.99</h4>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga voluptatibus eaque culpa, 
-            dolores iste illum dolore at hic et maxime, saepe adipisci veniam quibusdam molestiae ea 
-            laudantium odit numquam. Rerum.</p>
-          <br>
-        </div>
-      </div>
+    <div class="rooms">
+      <div class="container">
 
-      <div class="package-item">
-        <a href="package-details.html">
-          <img src="assets/img/portfolio/portfolio-7.jpg" class="package-img">
-        </a>
-        <div class="content">
-          <h4>Package name RM99.99</h4>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga voluptatibus eaque culpa, 
-            dolores iste illum dolore at hic et maxime, saepe adipisci veniam quibusdam molestiae ea 
-            laudantium odit numquam. Rerum.</p>
-          <br>
-        </div>
-      </div>
+        <div class="room-bottom">
+          <h3>Package List</h3>
 
-    </section> 
+          <!-- This is to list the packages based on the table of packages form the quarantine database -->
+          <!-- The info will be retrieved from the packkage table -->
+          <?php $sql = "SELECT * from packages";
+          $query = $dbh->prepare($sql);
+          $query->execute();
+          $results = $query->fetchAll(PDO::FETCH_OBJ);
+          $cnt = 1;
+          if ($query->rowCount() > 0) {
+            foreach ($results as $result) {  ?>
 
-  </main><!-- End #main -->
-
+              <div class="package-item">
+                <a href="package-details.html">
+                  <img src="assets/img/pkg_image/<?php echo htmlentities($result->pkg_image); ?>" class="package-img">
+                </a>
+                <div class="content">
+                  <h4><?php echo htmlentities($result->pkg_name); ?></h4>
+                  <p><?php echo htmlentities($result->pkg_details); ?></p>
+                  <br>
+                </div>
+              </div>
+          <?php }
+          } ?>
+  </main>
   <!--INCLUDE FOOTER AND VENDORJS FILE-->
-  <?php include('assets/includes/footer.php');?>
+  <?php include('assets/includes/footer.php'); ?>
 
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+
 
 </body>
 
