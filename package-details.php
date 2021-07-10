@@ -1,3 +1,10 @@
+<!-- To connect with server -->
+<?php
+session_start();
+error_reporting(0);
+include('assets/includes/config.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,12 +36,23 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+
+  <script>
+    new WOW().init();
+  </script>
+  <script src="js/jquery-ui.js"></script>
+  <script>
+    $(function() {
+      $("#datepicker,#datepicker1").datepicker();
+    });
+  </script>
 </head>
 
 <body>
 
   <!--INCLUDE HEADER AND TOPBAR FILE-->
-  <?php include('assets/includes/header.php');?>
+  <?php include('assets/includes/header.php'); ?>
 
   <main id="main">
 
@@ -43,54 +61,26 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Inner Page</h2>
+          <h2>Package Details</h2>
           <ol>
             <li><a href="index.php">Home</a></li>
-            <li>Inner Page</li>
+            <li><a href="package-list.php">Package List</a></li>
+            <li>Package Details</li>
           </ol>
         </div>
 
       </div>
     </section><!-- End Breadcrumbs -->
-    
-    <!-- ======= Portfolio Details Section ======= -->
-    <section id="portfolio-details" class="portfolio-details">
-      <div class="container">
 
-        <div class="portfolio-details-container">
+    <!-- ======= Package Details Section ======= -->
 
-          <div class="owl-carousel portfolio-details-carousel">
-            <img src="assets/img/portfolio/portfolio-details-1.jpg" class="img-fluid" alt="">
-            <img src="assets/img/portfolio/portfolio-details-2.jpg" class="img-fluid" alt="">
-            <img src="assets/img/portfolio/portfolio-details-3.jpg" class="img-fluid" alt="">
-          </div>
+    <!-- End Package Details Section -->
 
-          <div class="portfolio-info">
-            <h3>Package information</h3>
-            <ul>
-              <li><strong>Category</strong>: Web design</li>
-              <li><strong>Client</strong>: ASU Company</li>
-              <li><strong>Project date</strong>: 01 March, 2020</li>
-              <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
-            </ul>
-          </div>
-
-        </div>
-
-        <div class="portfolio-description">
-          <h2>Package Subtitle</h2>
-          <p>
-            Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-          </p>
-        </div>
-
-      </div>
-    </section><!-- End Portfolio Details Section -->
 
   </main><!-- End #main -->
 
   <!--INCLUDE FOOTER AND VENDORJS FILE-->
-  <?php include('assets/includes/footer.php');?>
+  <?php include('assets/includes/footer.php'); ?>
 
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
