@@ -59,7 +59,6 @@
 
         <div class="section-title">
             <h2>About Us</h2>
-            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
         </div>
 
         <div class="row">
@@ -67,20 +66,21 @@
             <img src="assets/img/staff.png" class="img-fluid" alt="">
             </div>
             <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
-            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
-            <p class="font-italic">
-                We offer the some of the best quarantine services in the whole world. By choosing us you will receive 5 meals a day, 3 main meals and brunch and another meal right before dinner.
-            </p>
-            <ul>
-                <li><i class="icofont-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                <li><i class="icofont-check-circled"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                <li><i class="icofont-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-            </ul>
+            <h3>Let's get to know us closely!</h3>
+            <p></p>
             <p>
-                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                culpa qui officia deserunt mollit anim id est laborum
+            SAVESTAY is a leading technology company, providing people with access to find and book transportation, accommodation, activities and lifestyle services, and finance. SAFESTAY has a complete product portfolio including services for quarantine needs such as airport pick-up services, hotel provision for quarantine, entertainment, and health to support markets during this COVID-19 pandemic.
             </p>
+
+            <p>We have principles that are put forward for the satisfaction and convenience of users:</p>
+            <ul>
+                <li><i class="icofont-check-circled"></i> Providing world-class services with maximum comfort and efficiency in the face of the COVID-19 pandemic.</li>
+                <li><i class="icofont-check-circled"></i> Provide the maximum possible continuity of protection for services in the face of the COVID-19 pandemic. </li>
+                <li><i class="icofont-check-circled"></i> Provide a flexible and up-to-date platform in providing world-class services with the most sophisticated possible.</li>
+            </ul>
+           
+            <p>Through continuous innovation, SAFESTAY will evolve to help as many people as possible fulfill and assist in dealing with this COVID-19 pandemic. Our mission is to enable you to fulfill your aspirations with integrated products in one platform.</p>
+
             </div>
         </div>
 
