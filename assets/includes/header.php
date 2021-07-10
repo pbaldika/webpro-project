@@ -25,25 +25,11 @@
         <nav class="nav-menu d-none d-lg-block">
         <ul>
             <li class="active"><a href="index.php">Home</a></li>
-            
             <li><a href="package-list.php">Packages</a></li>
             <li><a href="services.php">Services</a></li>
             <li><a href="about.php">About Us</a></li>
             <li><a href="contact.php">Contact</a></li>
-            <li class="drop-down"><a href="hotel-list.php">Locations</a>
-            <ul>
-                <li class="drop-down"><a href="#">Kuala Lumpur</a>
-                    <ul>
-                        <li><a href="#">Hilltop</a></li>
-                        <li><a href="#">Motel</a></li>
-                        <li><a href="#">Villas</a></li>
-                        <li><a href="#">Resort Worlds</a></li>
-                        <li><a href="#">Lake Place</a></li>
-                    </ul>
-                </li>
-                <!--<li><a href="#"></a></li>-->
-            </ul>
-            </li>
+            <li><a href="hotel-list.php">Locations</a></li>
         </ul>
         </nav><!-- .nav-menu -->
         <a href="/admin/admin-login.php" class="get-started-btn scrollto">Admin Login</a>
