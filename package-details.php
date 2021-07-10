@@ -76,6 +76,99 @@ include('assets/includes/config.php');
 
     <!-- End Package Details Section -->
 
+    <!-- coba php -->
+    <?php if ($error) { ?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
+    else if ($msg) { ?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php } ?>
+    <?php
+    $pid = intval($_GET['pkg_id']);
+    $sql = "SELECT * from packages where pkg_id=:pid";
+    $query = $dbh->prepare($sql);
+    $query->bindParam(':pid', $pid, PDO::PARAM_STR);
+    $query->execute();
+    $results = $query->fetchAll(PDO::FETCH_OBJ);
+    $cnt = 1;
+    if ($query->rowCount() > 0) {
+      foreach ($results as $result) {  ?>
+
+<section id="portfolio-details" class="portfolio-details">
+
+      <div class="container">
+      <h2><b><?php echo htmlentities($result->pkg_name); ?></b> </h2> <br>
+
+        <div class="portfolio-details-container">
+
+          <div class="owl-carousel portfolio-details-carousel">
+            <img src="assets/img/portfolio/portfolio-details-1.jpg" class="img-fluid" alt="">
+            <img src="assets/img/portfolio/portfolio-details-2.jpg" class="img-fluid" alt="">
+            <img src="assets/img/portfolio/portfolio-details-3.jpg" class="img-fluid" alt="">
+          </div>
+
+          <div class="portfolio-info">
+            <h3>Package information</h3>
+            <ul>
+              <li><strong>Price:</strong> <?php echo htmlentities($result->pkg_price); ?> MYR</li>
+              <li><strong>Type:</strong> <?php echo htmlentities($result->pkg_type); ?></li>
+              <li><strong>Project date</strong>: 01 March, 2020</li>
+              <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="portfolio-description">
+          <h2>Package Details</h2>
+          <p>
+          <?php echo htmlentities($result->pkg_details); ?>  
+          </p>
+
+          <br>
+
+          <h2>Package Features</h2>
+          <p>
+          <?php echo htmlentities($result->pkg_features); ?>  
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+        <div>
+          <div>
+            <img src="assets/pkg_image<?php echo htmlentities($result->pkg_image); ?>">
+          </div>
+          <div>
+            <h2><?php echo htmlentities($result->pkg_name); ?></h2>
+            <p>#PKG-<?php echo htmlentities($result->pkg_id); ?></p>
+            <p><b>Package Type :</b> <?php echo htmlentities($result->pkg_type); ?></p>
+            <p><b>Package Features :</b> <?php echo htmlentities($result->pkg_features); ?></p>
+            <p><b>Features</b> <?php echo htmlentities($result->PackageFetures); ?></p>
+            <div>
+              <div>
+                <label>From</label>
+                <input class="date" id="datepicker" type="text" placeholder="dd-mm-yyyy" name="fromdate" required="">
+              </div>
+              <div>
+                <label class="inputLabel">To</label>
+                <input class="date" id="datepicker1" type="text" placeholder="dd-mm-yyyy" name="todate" required="">
+              </div>
+            </div>
+            <div></div>
+            <div>
+              <p>Grand Total</p>
+              <h3>USD.800</h3>
+            </div>
+          </div>
+          <h3>Package Details</h3>
+          <p style="padding-top: 1%"><?php echo htmlentities($result->PackageDetails); ?> </p>
+        </div>
+
+    <?php }
+    } ?>
+    <!-- coba php end -->
+
+
+
 
   </main><!-- End #main -->
 
