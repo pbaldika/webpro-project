@@ -79,11 +79,11 @@ include('assets/includes/config.php');
             foreach ($results as $result) {  ?>
 
               <div class="package-item">
-                <a href="package-details.php?pkgid">
+                <a href="package-details.php?pkg_id">
                   <img src="assets/img/pkg_image/<?php echo htmlentities($result->pkg_image); ?>" class="package-img" height="165px" width="200px">
                 </a>
                 <div class="content">
-                  <a href="package-details.php?pkgid">
+                  <a href="package-details.php?pkg_id">
                     
                   <h4><?php echo htmlentities($result->pkg_name); ?></h4>
                   </a>
