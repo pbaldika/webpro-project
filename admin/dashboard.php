@@ -33,9 +33,9 @@
     <div class="container-fluid">
         <div class="row content">
             <div class="col-sm-3 sidenav hidden-xs">
-                <h2>Logo</h2>
+                <h2>System Admin</h2>
                 <ul class="nav nav-pills nav-stacked">
-                    <li class="active"><a href="#section1">Dashboard</a></li>
+                    <li class="active"><a href="dashboard.php">Dashboard</a></li>
                     <li><a href="manage-hotels.php">Manage Hotels</a></li>
                     <li><a href="manage-packages.php">Manage Packages</a></li>
                     <li><a href="manage-bookings.php">Manage Bookings</a></li>

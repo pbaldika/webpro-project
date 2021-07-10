@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('assets/includes/config.php');
+include('includes/config.php');
 if (isset($_POST['login'])) {
     $uname = $_POST['username'];
     $pass = md5($_POST['password']);

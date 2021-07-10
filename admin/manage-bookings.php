@@ -2,71 +2,55 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Dashboard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+        .row.content {
+            height: 550px
+        }
 
-  <title>Inner Page</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+        /* Set gray background color and 100% height */
+        .sidenav {
+            background-color: #f1f1f1;
+            height: 100%;
+        }
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: Green - v2.3.1
-  * Template URL: https://bootstrapmade.com/green-free-one-page-bootstrap-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+        /* On small screens, set height to 'auto' for the grid */
+        @media screen and (max-width: 767px) {
+            .row.content {
+                height: auto;
+            }
+        }
+    </style>
 </head>
 
 <body>
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-3 sidenav hidden-xs">
+                <h2>System Admin</h2>
+                <ul class="nav nav-pills nav-stacked">
+                    <li><a href="dashboard.php">Dashboard</a></li>
+                    <li><a href="manage-hotels.php">Manage Hotels</a></li>
+                    <li><a href="manage-packages.php">Manage Packages</a></li>
+                    <li class="active"><a href="manage-bookings.php">Manage Bookings</a></li>
+                </ul><br>
+            </div>
+            <br>
 
-  <!--INCLUDE HEADER AND TOPBAR FILE-->
-  <?php include('assets/includes/header.php');?>
-
-  <main id="main">
-
-    <!-- ======= Breadcrumbs ======= -->
-    <section class="breadcrumbs">
-      <div class="container">
-
-        <div class="d-flex justify-content-between align-items-center">
-          <h2>Inner Page</h2>
-          <ol>
-            <li><a href="index.php">Home</a></li>
-            <li>Inner Page</li>
-          </ol>
+            <div class="col-sm-9">
+                <div class="well">
+                    <h4>Dashboard</h4>
+                    <p>Some text..</p>
+                </div>
+            </div>
         </div>
-
-      </div>
-    </section><!-- End Breadcrumbs -->
-
-    <section class="inner-page">
-      <div class="container">
-        <p>
-          Example inner page template
-        </p>
-      </div>
-    </section>
-
-  </main><!-- End #main -->
-
-  <!--INCLUDE FOOTER AND VENDORJS FILE-->
-  <?php include('assets/includes/footer.php');?>
-
-  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+    </div>
 
 </body>
 

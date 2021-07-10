@@ -23,7 +23,7 @@ if (strlen($_SESSION['alogin']) == 0) {
     <html lang="en">
 
     <head>
-        <title>Update Hotel</title>
+        <h2>System Admin</h2>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
