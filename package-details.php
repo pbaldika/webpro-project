@@ -76,7 +76,59 @@ include('assets/includes/config.php');
 
     <!-- End Package Details Section -->
 
+    <!-- coba php -->
+    <?php if ($error) { ?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
+    else if ($msg) { ?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php } ?>
+    <?php
+    $pid = intval($_GET['pkg_id']);
+    $sql = "SELECT * from packages where pkg_id=:pid";
+    $query = $dbh->prepare($sql);
+    $query->bindParam(':pid', $pid, PDO::PARAM_STR);
+    $query->execute();
+    $results = $query->fetchAll(PDO::FETCH_OBJ);
+    $cnt = 1;
+    if ($query->rowCount() > 0) {
+      foreach ($results as $result) {  ?>
 
+<section id="portfolio-details" class="portfolio-details">
+
+      <div class="container">
+      <h2><b><?php echo htmlentities($result->pkg_name); ?></b> </h2> <br>
+
+        <div class="portfolio-details-container">
+
+          <div>
+            <img src="assets/img/pkg_image/<?php echo htmlentities($result->pkg_image); ?>" class="img-fluid" alt="">
+          </div>
+
+          <div class="portfolio-info">
+            <h3>Package information</h3>
+            <ul>
+              <li><strong>Price:</strong> <?php echo htmlentities($result->pkg_price); ?> MYR</li>
+              <li><strong>Type:</strong> <?php echo htmlentities($result->pkg_type); ?></li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="portfolio-description">
+          <h2>Package Details</h2>
+          <p>
+          <?php echo htmlentities($result->pkg_details); ?>  
+          </p>
+
+          <br>
+
+          <h2>Package Features</h2>
+          <p>
+          <?php echo htmlentities($result->pkg_features); ?>  
+          </p>
+        </div>
+
+      </div>
+    </section>
+    <?php }
+    } ?>
   </main><!-- End #main -->
 
   <!--INCLUDE FOOTER AND VENDORJS FILE-->
