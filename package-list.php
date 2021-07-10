@@ -52,10 +52,9 @@ include('assets/includes/config.php');
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Inner Page</h2>
           <ol>
             <li><a href="index.php">Home</a></li>
-            <li>Inner Page</li>
+            <li>Package List</li>
           </ol>
         </div>
 
@@ -84,7 +83,10 @@ include('assets/includes/config.php');
                   <img src="assets/img/pkg_image/<?php echo htmlentities($result->pkg_image); ?>" class="package-img" height="165px" width="200px">
                 </a>
                 <div class="content">
+                  <a href="package-details.html">
+                    
                   <h4><?php echo htmlentities($result->pkg_name); ?></h4>
+                  </a>
                   <p><?php echo htmlentities($result->pkg_details); ?></p>
                   <br>
                 </div>
