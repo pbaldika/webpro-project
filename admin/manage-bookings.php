@@ -78,21 +78,21 @@ if (strlen($_SESSION['alogin']) == 1) {
                 <div class="col-sm-9">
                     <div class="well">
                         <h4>Manage Bookings</h4>
-                        <table id="table">
+                        <table class="table table-bordered">
                             <thead>
                                 <tr>
                                     <th>Booking id</th>
                                     <th>Name</th>
                                     <th>Mobile No.</th>
-                                    <th>Email Id</th>
+                                    <th>Email</th>
                                     <th>Package</th>
-                                    <th>From /To </th>
-                                    <th>Status </th>
-                                    <th>Action </th>
+                                    <th>From/To </th>
+                                    <th>Status</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php $sql = "SELECT booking.booking_id as bookid,full_name as fname,phone as mnumber,email as email,packages.pkg_name as pckname,packages.pkg_id as pid,booking.in_date as fdate,booking.out_date as tdate,booking.status as status,booking.update_date as update from booking join packages on packages.pkg_id=booking.pkg_id";
+                                <?php $sql = "SELECT booking.booking_id as bookid,full_name as fname,phone as mnumber,email as email,packages.pkg_name as pckname,packages.pkg_id as pid,booking.in_date as fdate,booking.out_date as tdate,booking.status as status, from booking join packages on packages.pkg_id=booking.pkg_id";
                                 $query = $dbh->prepare($sql);
                                 $query->execute();
                                 $results = $query->fetchAll(PDO::FETCH_OBJ);
@@ -114,8 +114,8 @@ if (strlen($_SESSION['alogin']) == 1) {
                                                     echo "Cancelled";
                                                 }
                                                 ?></td>
-                                            <?php if ($result->status == 1) {
-                                            ?><td>Cancelled</td>
+                                            <?php if ($result->status == 1) { ?>
+                                                <td>Cancelled</td>
                                             <?php } else { ?>
                                                 <td><a href="manage-bookings.php?bkid=<?php echo htmlentities($result->bookid); ?>" onclick="return confirm('Do you really want to cancel booking')">Cancel</a> / <a href="manage-bookings.php?bckid=<?php echo htmlentities($result->bookid); ?>" onclick="return confirm('booking has been confirmed')">Confirm</a></td>
                                             <?php } ?>
