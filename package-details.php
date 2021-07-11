@@ -11,7 +11,8 @@ if (isset($_POST['submit'])) {
   $phone = $_POST['phone'];
   $fromdate = $_POST['fromdate'];
   $todate = $_POST['todate'];
-  $sql = "INSERT INTO booking(pkg_id,full_name,email,phone,in_date,out_date,status) VALUES(:pid,:fname,:email,:phone,:fromdate,:todate,0)";
+  $datenow = date('Y-m-d H:i:s');
+  $sql = "INSERT INTO booking(pkg_id,full_name,email,phone,in_date,out_date,booking_date,status) VALUES(:pid,:fname,:email,:phone,:fromdate,:todate,:datenow,0)";
   $query = $dbh->prepare($sql);
   $query->bindParam(':pid', $pid, PDO::PARAM_STR);
   $query->bindParam(':fname', $fname, PDO::PARAM_STR);
@@ -19,13 +20,12 @@ if (isset($_POST['submit'])) {
   $query->bindParam(':phone', $phone, PDO::PARAM_STR);
   $query->bindParam(':fromdate', $fromdate, PDO::PARAM_STR);
   $query->bindParam(':todate', $todate, PDO::PARAM_STR);
+  $query->bindParam(':datenow', $datenow, PDO::PARAM_STR);
   $query->execute();
   $lastInsertId = $dbh->lastInsertId();
   if ($lastInsertId) {
     $msg = "Booked Successfully";
-  } else {
-    $error = "Something went wrong. Please try again";
-  }
+  } 
 }
 ?>
 
@@ -158,7 +158,7 @@ if (isset($_POST['submit'])) {
               <!-- Booking section  -->
               <section id="booking" class="contact">
                 <h2><b>Book Now</b></h2>
-                <form name="booking" method="POST" class="php-email-form" name="bookinsgform">
+                <form name="booking" method="POST" name="bookinsgform">
                   <?php if ($error) { ?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } else if ($msg) { ?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php } ?>
                   <div class="form-group">
                     <label>Your Name</label>
