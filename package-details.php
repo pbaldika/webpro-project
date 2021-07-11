@@ -3,6 +3,26 @@
 session_start();
 error_reporting(0);
 include('assets/includes/config.php');
+
+if (isset($_POST['submitnow'])) {
+  $fname = $_POST['name'];
+  $email = $_POST['email'];
+  $phone = $_POST['phone'];
+  $stat = $_POST['0'];
+  $sql = "INSERT INTO booking(pkg_id,full_name,email,phone,status) VALUES(:pid,:fname,:email,:phone,:stat)";
+  $query = $dbh->prepare($sql);
+  $query->bindParam(':fname', $fname, PDO::PARAM_STR);
+  $query->bindParam(':email', $email, PDO::PARAM_STR);
+  $query->bindParam(':phone', $phone, PDO::PARAM_STR);
+  $query->bindParam(':status', $status, PDO::PARAM_STR);
+  $query->execute();
+  $lastInsertId = $dbh->lastInsertId();
+  if ($lastInsertId) {
+    $msg = "Enquiry  Successfully submited";
+  } else {
+    $error = "Something went wrong. Please try again";
+  }
+}
 ?>
 
 <!DOCTYPE html>
@@ -77,8 +97,7 @@ include('assets/includes/config.php');
     <!-- End Package Details Section -->
 
     <!-- coba php -->
-    <?php if ($error) { ?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
-    else if ($msg) { ?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php } ?>
+    <?php if ($error) { ?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } else if ($msg) { ?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php } ?>
     <?php
     $pid = intval($_GET['pkg_id']);
     $sql = "SELECT * from packages where pkg_id=:pid";
@@ -90,43 +109,85 @@ include('assets/includes/config.php');
     if ($query->rowCount() > 0) {
       foreach ($results as $result) {  ?>
 
-<section id="portfolio-details" class="portfolio-details">
+        <section id="portfolio-details" class="portfolio-details">
 
-      <div class="container">
-      <h2><b><?php echo htmlentities($result->pkg_name); ?></b> </h2> <br>
+          <div class="container">
+            <h2><b><?php echo htmlentities($result->pkg_name); ?></b> </h2> <br>
 
-        <div class="portfolio-details-container">
+            <div class="portfolio-details-container">
 
-          <div>
-            <img src="admin/img/pkgimage/<?php echo htmlentities($result->pkg_image); ?>" class="img-fluid" alt="">
+              <div>
+                <img src="assets/img/pkg_image/<?php echo htmlentities($result->pkg_image); ?>" class="img-fluid" alt="">
+              </div>
+
+              <div class="portfolio-info">
+                <h3>Package information</h3>
+                <ul>
+                  <li><strong>Price:</strong> <?php echo htmlentities($result->pkg_price); ?> MYR</li>
+                  <li><strong>Type:</strong> <?php echo htmlentities($result->pkg_type); ?></li>
+                </ul>
+              </div>
+
+            </div>
+
+            <div class="portfolio-description">
+              <h2>Package Details</h2>
+              <p>
+                <?php echo htmlentities($result->pkg_details); ?>
+              </p>
+
+              <br>
+
+              <h2>Package Features</h2>
+              <p>
+                <?php echo htmlentities($result->pkg_features); ?>
+              </p>
+
+
+              <!-- Booking section  -->
+              <section id="contact" class="contact">
+              <h2><b>Book Now</b></h2>
+                <form action="forms/contact.php" method="post" role="form" class="php-email-form" name="enquiry">
+
+                  <?php if ($error) { ?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } else if ($msg) { ?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php } ?>
+
+
+                  <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                    <div class="validate"></div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="name">Your Email</label>
+                      <input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Please enter a valid email" />
+                      <div class="validate"></div>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="name">Your Phone</label>
+                      <input type="number" name="phone" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter valid phone number" />
+                      <div class="validate"></div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="name">Message</label>
+                    <textarea class="form-control" name="message" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
+                    <div class="validate"></div>
+                  </div>
+                  <div class="mb-3">
+                    <div class="loading">Loading</div>
+                    <div class="sent-message">Your message has been sent. Thank you!</div>
+                  </div>
+                  <div class="text-center"><button type="submit" name="submitnow">Send Message</button></div>
+                </form>
+              </section>
+              <!-- Booking section  -->
+
+            </div>
+
+
           </div>
-
-          <div class="portfolio-info">
-            <h3>Package information</h3>
-            <ul>
-              <li><strong>Price:</strong> <?php echo htmlentities($result->pkg_price); ?> MYR</li>
-              <li><strong>Type:</strong> <?php echo htmlentities($result->pkg_type); ?></li>
-            </ul>
-          </div>
-
-        </div>
-
-        <div class="portfolio-description">
-          <h2>Package Details</h2>
-          <p>
-          <?php echo htmlentities($result->pkg_details); ?>  
-          </p>
-
-          <br>
-
-          <h2>Package Features</h2>
-          <p>
-          <?php echo htmlentities($result->pkg_features); ?>  
-          </p>
-        </div>
-
-      </div>
-    </section>
+        </section>
     <?php }
     } ?>
   </main><!-- End #main -->
