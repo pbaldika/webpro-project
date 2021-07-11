@@ -73,8 +73,8 @@ CREATE TABLE `hotels` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `hotels` (`htl_id`, `htl_name`, `htl_location`, `htl_image`, `creation_date`, `update_date`) VALUES
-(1, 'Central Hotel KLIA', 'KLIA Terminal 2', 'portfolio-2.jpg', '2021-07-09 06:03:00', NULL),
-(2, 'Central Hotel Sepang', 'Sepang', 'portfolio-3.jpg', '2021-07-09 06:03:00', NULL);
+(1, 'Central Hotel KLIA', 'KLIA Terminal 2', 'hotel3.jpg', '2021-07-09 06:03:00', NULL),
+(2, 'Central Hotel Sepang', 'Sepang', 'hotel4.jpg', '2021-07-09 06:03:00', NULL);
 
 -- --------------------------------------------------------
 
