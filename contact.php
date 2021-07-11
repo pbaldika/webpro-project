@@ -2,9 +2,7 @@
 session_start();
 error_reporting(0);
 include('assets/includes/config.php');
-$sql = "INSERT INTO contact(user_name,user_email,user_subject,user_message) VALUES('asldika','dasdas@awdd','dsadasdas','sadasdasda')";
-if (isset($_POST['submit1'])) 
-{
+if (isset($_POST['submit1'])) {
   $fname = $_POST['name'];
   $email = $_POST['email'];
   $csubject = $_POST['subject'];
@@ -18,9 +16,7 @@ if (isset($_POST['submit1']))
   $query->execute();
   $lastInsertId = $dbh->lastInsertId();
   if ($lastInsertId) {
-    $msg = "Enquiry  Successfully submited";
-    $_SESSION['msg'] = "Message isSuccessfully submited";
-        header('location:../thankyou.php');
+    $msg = "Enquiry Successfully submited";
   } else {
     $error = "Something went wrong. Please try again";
   }
@@ -115,7 +111,7 @@ if (isset($_POST['submit1']))
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
 
-            <form  method="post" role="form" class="php-email-form" name="enquiry">
+            <form method="post" role="form" class="php-email-form" name="enquiry">
 
               <?php if ($error) { ?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } else if ($msg) { ?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php } ?>
 
