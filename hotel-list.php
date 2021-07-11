@@ -12,6 +12,7 @@ include('assets/includes/config.php');
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <title>Hotel List</title>
+    <link rel = "icon" href = "assets/img/logo.JPG" type = "image/x-icon">
     <meta content="" name="description">
     <meta content="" name="keywords">
 
