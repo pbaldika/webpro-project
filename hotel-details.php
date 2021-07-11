@@ -99,7 +99,7 @@ include('assets/includes/config.php');
             <div class="portfolio-details-container">
 
               <div>
-                <img src="assets/img/portfolio/<?php echo htmlentities($result->htl_image); ?>" class="img-fluid" alt="">
+                <img src="admin/img/htlimage/<?php echo htmlentities($result->htl_image); ?>" class="img-fluid" alt="">
               </div>
 
               <div class="portfolio-info">
@@ -130,7 +130,7 @@ include('assets/includes/config.php');
               foreach ($results as $result) {  ?>
 
                 <div class="package-item">
-                  <img src="assets/img/pkg_image/<?php echo htmlentities($result->pkg_image); ?>" class="package-img" height="350px" width="auto">
+                  <img src="admin/img/pkgimage/<?php echo htmlentities($result->pkg_image); ?>" class="package-img" height="350px" width="auto">
                   <div class="content">
                     <br>
                     <a href="package-details.php?pkg_id=<?php echo htmlentities($result->pkg_id); ?>">
