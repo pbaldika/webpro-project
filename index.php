@@ -4,6 +4,7 @@ error_reporting(0);
 include('assets/includes/config.php');
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -202,7 +203,7 @@ include('assets/includes/config.php');
         <div class="row">
           <div class="col-lg-9 text-center text-lg-left">
             <h3>Book Your Quarantine Now</h3>
-            <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Let's book hotels and quarantine services at SAFESTAY. The process is easy and simple! With the special promo provided by SAFESTAY, there is no reason to suffer during this pandemic!</p>
           </div>
           <div class="col-lg-3 cta-btn-container text-center">
             <a class="cta-btn align-middle" href="package-list.php">Choose A Package</a>
@@ -231,7 +232,7 @@ include('assets/includes/config.php');
 
         <div class="section-title">
           <h2>Our Partners</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>You are our priority! SAFESTAY works with various hotel chains to ensure that your quarantine is always comfortable and enjoyable.</p>
         </div>
 
         <div class="owl-carousel clients-carousel">
