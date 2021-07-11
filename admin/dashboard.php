@@ -48,6 +48,7 @@
                 <div class="well">
                     <h4>Dashboard</h4>
                     <p>Some text..</p>
+                    <a href="admin-logout.php"><button type="button" class="btn btn-xs btn-default">Logout</button></a>
                 </div>
                 <div class="row">
                     <div class="col-sm-3">
