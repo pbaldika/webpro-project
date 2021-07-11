@@ -70,14 +70,14 @@ include('assets/includes/config.php');
                 if ($query->rowCount() > 0) {
                     foreach ($results as $result) { ?>
                         <div class="hotel-item">
-                            <a href="">
+                            <a href="hotel-details.php?htl_id=<?php echo htmlentities($result->htl_id); ?>">
                                 <img src="assets/img/portfolio/<?php echo htmlentities($result->htl_image); ?>" class="hotel-img">
                             </a>
                             <div class="content">
                                 <h4>Hotel Name: <?php echo htmlentities($result->htl_name); ?></h4>
                                 <h6>Hotel Location: <?php echo htmlentities($result->htl_location); ?></h6>
                                 <br>
-                                <a href="" class="goto-button">go to website</a>
+                                <a href="hotel-details.php?htl_id=<?php echo htmlentities($result->htl_id); ?>" class="goto-button">go to page</a>
                             </div>
                         </div>
                 <?php }
