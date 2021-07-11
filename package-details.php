@@ -117,7 +117,7 @@ if (isset($_POST['submitnow'])) {
             <div class="portfolio-details-container">
 
               <div>
-                <img src="assets/img/pkg_image/<?php echo htmlentities($result->pkg_image); ?>" class="img-fluid" alt="">
+                <img src="assets/img/pkg_image/<?php echo htmlentities($result->pkg_image); ?>" class="img-fluid" alt="" width="1200px">
               </div>
 
               <div class="portfolio-info">
