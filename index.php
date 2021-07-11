@@ -12,6 +12,7 @@ include('assets/includes/config.php');
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Quarantine Hotel Booking</title>
+  <link rel = "icon" href = "assets/img/logo.JPG" type = "image/x-icon">
   <meta content="" name="description">
   <meta content="" name="keywords">
 
