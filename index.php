@@ -57,7 +57,7 @@ include('assets/includes/config.php');
             <div class="container">
               <h2 class="animate__animated animate__fadeInDown">Quarantine Accomodation</h2>
               <p class="animate__animated animate__fadeInUp">Need a hotel to quarantine?</p>
-              <a href="package-list.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">Start Booking</a>
+              <a href="hotel-list.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">Start Booking</a>
             </div>
           </div>
         </div>
