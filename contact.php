@@ -72,7 +72,7 @@ if (isset($_POST['submit1']))
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2></h2>
+          <h2>Contact</h2>
           <ol>
             <li><a href="index.php">Home</a></li>
             <li>Contact</li>
@@ -85,11 +85,6 @@ if (isset($_POST['submit1']))
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
       <div class="container">
-
-        <div class="section-title">
-          <h2>Contact</h2>
-          <p>Wherever you are, we are always by your side with just one click!</p>
-        </div>
 
         <div class="row">
 

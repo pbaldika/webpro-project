@@ -64,7 +64,7 @@ include('assets/includes/config.php');
           <h2>Package Details</h2>
           <ol>
             <li><a href="index.php">Home</a></li>
-            <li><a href="hotel-list.php">Hotel List</a></li>
+            <li><a href="hotel-list.php">Locations</a></li>
             <li>Hotel Details</li>
           </ol>
         </div>

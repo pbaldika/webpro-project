@@ -43,10 +43,10 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2></h2>
+          <h2>Services</h2>
           <ol>
             <li><a href="index.php">Home</a></li>
-            <li>Inner Page</li>
+            <li>Services</li>
           </ol>
         </div>
 
@@ -56,11 +56,6 @@
     <<!-- ======= Services Section ======= -->
     <section id="services" class="services">
         <div class="container">
-
-        <div class="section-title">
-            <h2>Services</h2>
-            <p>We offer an array of services for our guests in quarantine, ranging from PCR tests to entertainment, all to make your stay that more comfortable.</p>
-        </div>
 
         <div class="row">
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">

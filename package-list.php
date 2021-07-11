@@ -52,6 +52,7 @@ include('assets/includes/config.php');
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
+        <h2>Package List</h2>
           <ol>
             <li><a href="index.php">Home</a></li>
             <li>Package List</li>
@@ -61,12 +62,10 @@ include('assets/includes/config.php');
       </div>
     </section><!-- End Breadcrumbs -->
 
-
+    <br>
     <div class="rooms">
       <div class="container">
-
         <div class="room-bottom">
-          <h3>Package List</h3>
 
           <!-- This is to list the packages based on the table of packages form the quarantine database -->
           <!-- The info will be retrieved from the packkage table -->

@@ -43,10 +43,10 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2></h2>
+          <h2>About Us</h2>
           <ol>
             <li><a href="index.php">Home</a></li>
-            <li>Inner Page</li>
+            <li>About Us</li>
           </ol>
         </div>
 
@@ -56,10 +56,6 @@
     <!-- ======= About Us Section ======= -->
     <section id="about" class="about">
         <div class="container">
-
-        <div class="section-title">
-            <h2>About Us</h2>
-        </div>
 
         <div class="row">
             <div class="col-lg-6 order-1 order-lg-2">

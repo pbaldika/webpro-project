@@ -53,7 +53,7 @@ include('assets/includes/config.php');
                     <h2>List of Hotels</h2>
                     <ol>
                         <li><a href="index.php">Home</a></li>
-                        <li>Inner Page</li>
+                        <li>Locations</li>
                     </ol>
                 </div>
 
