@@ -24,7 +24,7 @@
 
         <nav class="nav-menu d-none d-lg-block">
         <ul>
-            <li class="active"><a href="index.php">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li><a href="package-list.php">Packages</a></li>
             <li><a href="services.php">Services</a></li>
             <li><a href="about.php">About Us</a></li>
