@@ -48,7 +48,7 @@ if (strlen($_SESSION['alogin']) == 0) {
                         <li><a href="manage-hotels.php">Manage Hotels</a></li>
                         <li><a href="manage-packages.php">Manage Packages</a></li>
                         <li><a href="manage-bookings.php">Manage Bookings</a></li>
-                        <li><a href="manage-bookings.php">Manage Enquiries</a></li>
+                        <li><a href="manage-enquiries.php">Manage Enquiries</a></li>
                     </ul><br>
                 </div>
                 <br>
@@ -90,6 +90,18 @@ if (strlen($_SESSION['alogin']) == 0) {
                             <div class="well">
                                 <h4>Total bookings</h4>
                                 <?php $sql3 = "SELECT booking_id from booking";
+                                $query3 = $dbh->prepare($sql3);
+                                $query3->execute();
+                                $results3 = $query3->fetchAll(PDO::FETCH_OBJ);
+                                $cnt3 = $query3->rowCount();
+                                ?>
+                                <h4><?php echo htmlentities($cnt3); ?></h4>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="well">
+                                <h4>Total Enquiries</h4>
+                                <?php $sql3 = "SELECT contact_id from contact";
                                 $query3 = $dbh->prepare($sql3);
                                 $query3->execute();
                                 $results3 = $query3->fetchAll(PDO::FETCH_OBJ);

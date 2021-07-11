@@ -49,7 +49,7 @@ if (strlen($_SESSION['alogin']) == 0) {
                     <li><a href="manage-hotels.php">Manage Hotels</a></li>
                     <li><a href="manage-packages.php">Manage Packages</a></li>
                     <li><a href="manage-bookings.php">Manage Bookings</a></li>
-                    <li class="active"><a href="manage-bookings.php">Manage Enquiries</a></li>
+                    <li class="active"><a href="manage-enquiries.php">Manage Enquiries</a></li>
                 </ul><br>
             </div>
             <br>
@@ -66,7 +66,6 @@ if (strlen($_SESSION['alogin']) == 0) {
                                 <th>Subject</th>
                                 <th>Message</th>
                                 <th>Posted on</th>
-                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -80,11 +79,11 @@ if (strlen($_SESSION['alogin']) == 0) {
                                 foreach ($results as $result) { ?>
                                     <tr>
                                         <td><?php echo htmlentities($cnt); ?></td>
-                                        <td><?php echo htmlentities($result->htl_name); ?></td>
-                                        <td><?php echo htmlentities($result->htl_location); ?></td>
-                                        <td><?php echo htmlentities($result->htl_image); ?></td>
-                                        <td><?php echo htmlentities($result->creation_date); ?></td>
-                                        <td><a href="update-hotel.php?hid=<?php echo htmlentities($result->htl_id); ?>"><button type="button" class="btn btn-primary">Edit</button></a></td>
+                                        <td><?php echo htmlentities($result->user_name); ?></td>
+                                        <td><?php echo htmlentities($result->user_email); ?></td>
+                                        <td><?php echo htmlentities($result->user_subject); ?></td>
+                                        <td><?php echo htmlentities($result->user_message); ?></td>
+                                        <td><?php echo htmlentities($result->posting_date); ?></td>
                                     </tr>
                             <?php $cnt = $cnt + 1;
                                 }
