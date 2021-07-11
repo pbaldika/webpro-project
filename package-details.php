@@ -180,12 +180,12 @@ if (isset($_POST['submit'])) {
 
                     <div action="/action_page.php" class="form-group col-md-6">
                       <label for="from">Date From:</label>
-                      <input type="date" id="from" name="datefrom">
+                      <input type="date" id="from" name="fromdate">
                     </div>
 
                     <div action="/action_page.php" class="form-group col-md-6">
                       <label for="to">Date To:</label>
-                      <input type="date" id="to" name="dateto">
+                      <input type="date" id="to" name="todate">
                     </div>
                     
                   </div>
