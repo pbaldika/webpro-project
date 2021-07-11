@@ -18,14 +18,14 @@ if (isset($_POST['submit'])) {
   $query->bindParam(':email', $email, PDO::PARAM_STR);
   $query->bindParam(':phone', $phone, PDO::PARAM_STR);
   $query->bindParam(':fromdate', $fromdate, PDO::PARAM_STR);
-	$query->bindParam(':todate', $todate, PDO::PARAM_STR);
+  $query->bindParam(':todate', $todate, PDO::PARAM_STR);
   $query->execute();
   $lastInsertId = $dbh->lastInsertId();
-	if ($lastInsertId) {
-		$msg = "Booked Successfully";
-	} else {
-		$error = "Something went wrong. Please try again";
-	}
+  if ($lastInsertId) {
+    $msg = "Booked Successfully";
+  } else {
+    $error = "Something went wrong. Please try again";
+  }
 }
 ?>
 
@@ -53,6 +53,12 @@ if (isset($_POST['submit'])) {
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- Datepicker script and bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+  <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
 
   <!-- =======================================================
   * Template Name: Green - v2.3.1
@@ -121,7 +127,7 @@ if (isset($_POST['submit'])) {
             <div class="portfolio-details-container">
 
               <div>
-              <img src="admin/img/pkgimage/<?php echo htmlentities($result->pkg_image); ?>" class="img-fluid" alt="">
+                <img src="admin/img/pkgimage/<?php echo htmlentities($result->pkg_image); ?>" class="img-fluid" alt="">
               </div>
 
               <div class="portfolio-info">
@@ -149,8 +155,8 @@ if (isset($_POST['submit'])) {
 
 
               <!-- Booking section  -->
-              <section id="booking" class="booking">
-                <h2><b>Book Now</b></h2>
+              <section id="booking" class="contact">
+                <h2>Book Now</h2>
                 <form name="booking" method="post" class="php-email-form" name="bookinsgform">
                   <?php if ($error) { ?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } else if ($msg) { ?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php } ?>
                   <div class="form-group">
@@ -161,8 +167,8 @@ if (isset($_POST['submit'])) {
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <label>Your Email</label>
-                        <input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Please enter a valid email" />
-                        <div class="validate"></div>
+                      <input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Please enter a valid email" />
+                      <div class="validate"></div>
                     </div>
                     <div class="form-group col-md-6">
                       <label>Your Phone</label>
@@ -171,12 +177,17 @@ if (isset($_POST['submit'])) {
                     </div>
                   </div>
                   <div class="form-row">
-                    <div class="form-group col-md-6">
-                      <label class="inputLabel">From</label>
-                      <input class="date" id="datepicker" type="text" placeholder="dd-mm-yyyy" name="fromdate" required="">
-                      <label class="inputLabel">To</label>
-                      <input class="date" id="datepicker1" type="text" placeholder="dd-mm-yyyy" name="todate" required="">
+
+                    <div action="/action_page.php" class="form-group col-md-6">
+                      <label for="from">Date From:</label>
+                      <input type="date" id="from" name="datefrom">
                     </div>
+
+                    <div action="/action_page.php" class="form-group col-md-6">
+                      <label for="to">Date To:</label>
+                      <input type="date" id="to" name="dateto">
+                    </div>
+                    
                   </div>
                   <div class="text-center"><button type="submit" name="submit">Create Booking</button></div>
                 </form>
