@@ -69,7 +69,7 @@
             <h3>Let's get to know us closely!</h3>
             <p></p>
             <p>
-            SAVESTAY is a leading technology company, providing people with access to find and book transportation, accommodation, activities and lifestyle services, and finance. SAFESTAY has a complete product portfolio including services for quarantine needs such as airport pick-up services, hotel provision for quarantine, entertainment, and health to support markets during this COVID-19 pandemic.
+            SAFESTAY is a leading technology company, providing people with access to find and book transportation, accommodation, activities and lifestyle services, and finance. SAFESTAY has a complete product portfolio including services for quarantine needs such as airport pick-up services, hotel provision for quarantine, entertainment, and health to support markets during this COVID-19 pandemic.
             </p>
 
             <p>We have principles that are put forward for the satisfaction and convenience of users:</p>
