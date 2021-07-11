@@ -54,7 +54,7 @@ if (strlen($_SESSION['alogin']) == 0) {
     <body>
         <div class="container-fluid">
             <div class="row content">
-                <div class="col-sm-3 sidenav hidden-xs">
+                <div class="col-sm-3 col-md-2 sidebar">
                     <br>
                     <ul class="nav nav-pills nav-stacked">
                         <li><a href="dashboard.php">Dashboard</a></li>

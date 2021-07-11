@@ -33,7 +33,7 @@
 <body>
     <div class="container-fluid">
         <div class="row content">
-            <div class="col-sm-3 sidenav hidden-xs">
+            <div class="col-sm-3 col-md-2 sidebar">
                 <br>
                 <ul class="nav nav-pills nav-stacked">
                     <li class="active"><a href="dashboard.php">Dashboard</a></li>
@@ -47,7 +47,7 @@
             <div class="col-sm-9">
                 <div class="well">
                     <h4>Dashboard</h4>
-                    <p>Some text..</p>
+                    
                     <div class=logout-button>
                         <a href="admin-logout.php"><button type="button" class="btn btn-default">Logout</button></a>
                     </div>
