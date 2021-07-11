@@ -102,6 +102,33 @@ INSERT INTO `packages` (`htl_id`, `pkg_id`, `pkg_name`, `pkg_type`, `pkg_price`,
 
 
 --
+-- Table structure for table `contact`
+--
+
+CREATE TABLE `contact` (
+  `contact_id` int(100) NOT NULL,
+  `user_name` varchar(120) DEFAULT NULL,
+  `user_email` varchar(120) DEFAULT NULL,
+  `user_subject` varchar(400) DEFAULT NULL,
+  `user_message` varchar(1000) DEFAULT NULL,
+  `posting_date` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+ALTER TABLE `contact`
+  ADD PRIMARY KEY (`contact_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `contact`
+--
+
+ALTER TABLE `contact`
+  MODIFY `contact_id` int(100) NOT NULL AUTO_INCREMENT;
+COMMIT;
+--
 -- Indexes for dumped tables
 --
 
