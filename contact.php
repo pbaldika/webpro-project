@@ -75,7 +75,7 @@ if (isset($_POST['submit1']))
           <h2></h2>
           <ol>
             <li><a href="index.php">Home</a></li>
-            <li>Inner Page</li>
+            <li>Contact</li>
           </ol>
         </div>
 
