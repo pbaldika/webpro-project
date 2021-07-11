@@ -34,7 +34,7 @@
     <div class="container-fluid">
         <div class="row content">
             <div class="col-sm-3 sidenav hidden-xs">
-                <h2>System Admin</h2>
+                <br>
                 <ul class="nav nav-pills nav-stacked">
                     <li class="active"><a href="dashboard.php">Dashboard</a></li>
                     <li><a href="manage-hotels.php">Manage Hotels</a></li>
@@ -48,7 +48,9 @@
                 <div class="well">
                     <h4>Dashboard</h4>
                     <p>Some text..</p>
-                    <a href="admin-logout.php"><button type="button" class="btn btn-xs btn-default">Logout</button></a>
+                    <div class=logout-button>
+                        <a href="admin-logout.php"><button type="button" class="btn btn-default">Logout</button></a>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-3">
