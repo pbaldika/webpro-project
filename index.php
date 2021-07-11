@@ -77,7 +77,7 @@ include('assets/includes/config.php');
             <div class="container">
               <h2 class="animate__animated animate__fadeInDown">Medical Services</h2>
               <p class="animate__animated animate__fadeInUp">COVID19 medical assistance at every hotel.</p>
-              <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+              <a href="services.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
             </div>
           </div>
         </div>
