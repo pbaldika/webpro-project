@@ -9,7 +9,7 @@ if (strlen($_SESSION['alogin']) == 0) {
     if (isset($_POST['submit'])) {
 
         $himage = $_FILES["hotelimage"]["name"];
-        move_uploaded_file($_FILES["hotelimage"]["tmp_name"], "img/" . $_FILES["hotelimage"]["name"]);
+        move_uploaded_file($_FILES["hotelimage"]["tmp_name"], "img/htlimage/" . $_FILES["hotelimage"]["name"]);
         $sql = "update hotels set htl_image=:himage where htl_id=:imgid";
         $query = $dbh->prepare($sql);
 
@@ -85,7 +85,7 @@ if (strlen($_SESSION['alogin']) == 0) {
                                             <div class="form-group">
                                                 <label for="focusedinput" class="col-sm-2 control-label">Hotel Image</label>
                                                 <div class="col-sm-8">
-                                                    <img src="img/<?php echo htmlentities($result->htl_image); ?>" width="200">
+                                                    <img src="img/htlimage/<?php echo htmlentities($result->htl_image); ?>" width="200">
                                                 </div>
                                             </div>
 

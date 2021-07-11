@@ -99,7 +99,7 @@ if (strlen($_SESSION['alogin']) == 0) {
                                             <div class="form-group">
                                                 <label for="focusedinput" class="col-sm-2 control-label">Hotel Image</label>
                                                 <div class="col-sm-8">
-                                                    <img src="img/<?php echo htmlentities($result->htl_image); ?>" width="200">&nbsp;&nbsp;&nbsp;<a href="change-hotel-image.php?imgid=<?php echo htmlentities($result->htl_id); ?>">Change Image</a>
+                                                    <img src="img/htlimage/<?php echo htmlentities($result->htl_image); ?>" width="200">&nbsp;&nbsp;&nbsp;<a href="change-hotel-image.php?imgid=<?php echo htmlentities($result->htl_id); ?>">Change Image</a>
                                                 </div>
                                             </div>
 

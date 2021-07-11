@@ -8,15 +8,15 @@ if (strlen($_SESSION['alogin']) == 0) {
     $imgid = intval($_GET['imgid']);
     if (isset($_POST['submit'])) {
 
-        $himage = $_FILES["packageimage"]["name"];
-        move_uploaded_file($_FILES["packageimage"]["tmp_name"], "img/" . $_FILES["packageimage"]["name"]);
+        $pimage = $_FILES["packageimage"]["name"];
+        move_uploaded_file($_FILES["packageimage"]["tmp_name"], "img/pkgimage/" . $_FILES["packageimage"]["name"]);
         $sql = "update packages set pkg_image=:pimage where pkg_id=:imgid";
         $query = $dbh->prepare($sql);
 
         $query->bindParam(':imgid', $imgid, PDO::PARAM_STR);
         $query->bindParam(':pimage', $pimage, PDO::PARAM_STR);
         $query->execute();
-        $msg = "PAckage Updated Successfully";
+        $msg = "Package Updated Successfully";
     }
 ?>
     <!DOCTYPE html>
@@ -71,7 +71,7 @@ if (strlen($_SESSION['alogin']) == 0) {
                         <?php if ($error) { ?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } else if ($msg) { ?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php } ?>
                         <div class="tab-content">
                             <div class="tab-pane active" id="horizontal-form">
-                                <form class="form-horizontal" name="hotel" method="post" enctype="multipart/form-data">
+                                <form class="form-horizontal" name="package" method="post" enctype="multipart/form-data">
                                     <?php
                                     $imgid = intval($_GET['imgid']);
                                     $sql = "SELECT pkg_image from packages where pkg_id=:imgid";
@@ -85,7 +85,7 @@ if (strlen($_SESSION['alogin']) == 0) {
                                             <div class="form-group">
                                                 <label for="focusedinput" class="col-sm-2 control-label">Package Image</label>
                                                 <div class="col-sm-8">
-                                                    <img src="img/<?php echo htmlentities($result->pkg_image); ?>" width="200">
+                                                    <img src="img/pkgimage/<?php echo htmlentities($result->pkg_image); ?>" width="200">
                                                 </div>
                                             </div>
 
@@ -107,7 +107,6 @@ if (strlen($_SESSION['alogin']) == 0) {
                         </div>
                     </div>
                 </div>
-
     </body>
 
     </html>
