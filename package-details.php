@@ -4,24 +4,28 @@ session_start();
 error_reporting(0);
 include('assets/includes/config.php');
 
-if (isset($_POST['submitnow'])) {
+if (isset($_POST['submit'])) {
+  $pid = intval($_GET['pkgid']);
   $fname = $_POST['name'];
   $email = $_POST['email'];
   $phone = $_POST['phone'];
-  $stat = $_POST['0'];
-  $sql = "INSERT INTO booking(pkg_id,full_name,email,phone,status) VALUES(:pid,:fname,:email,:phone,:stat)";
+  $fromdate = $_POST['fromdate'];
+  $todate = $_POST['todate'];
+  $sql = "INSERT INTO booking(pkg_id,full_name,email,phone,in_date,out_date,status) VALUES(:pid,:fname,:email,:phone,:fromdate,:todate,0)";
   $query = $dbh->prepare($sql);
+  $query->bindParam(':pid', $pid, PDO::PARAM_STR);
   $query->bindParam(':fname', $fname, PDO::PARAM_STR);
   $query->bindParam(':email', $email, PDO::PARAM_STR);
   $query->bindParam(':phone', $phone, PDO::PARAM_STR);
-  $query->bindParam(':status', $status, PDO::PARAM_STR);
+  $query->bindParam(':fromdate', $fromdate, PDO::PARAM_STR);
+	$query->bindParam(':todate', $todate, PDO::PARAM_STR);
   $query->execute();
   $lastInsertId = $dbh->lastInsertId();
-  if ($lastInsertId) {
-    $msg = "Enquiry  Successfully submited";
-  } else {
-    $error = "Something went wrong. Please try again";
-  }
+	if ($lastInsertId) {
+		$msg = "Booked Successfully";
+	} else {
+		$error = "Something went wrong. Please try again";
+	}
 }
 ?>
 
@@ -117,7 +121,7 @@ if (isset($_POST['submitnow'])) {
             <div class="portfolio-details-container">
 
               <div>
-                <img src="assets/img/pkg_image/<?php echo htmlentities($result->pkg_image); ?>" class="img-fluid" alt="">
+                <img src="admin/img/pkgimage/<?php echo htmlentities($result->pkg_image); ?>" class="img-fluid" alt="">
               </div>
 
               <div class="portfolio-info">
@@ -145,47 +149,41 @@ if (isset($_POST['submitnow'])) {
 
 
               <!-- Booking section  -->
-              <section id="contact" class="contact">
-              <h2><b>Book Now</b></h2>
-                <form action="forms/contact.php" method="post" role="form" class="php-email-form" name="enquiry">
-
+              <section id="booking" class="booking">
+                <h2><b>Book Now</b></h2>
+                <form name="booking" method="post" class="php-email-form" name="bookinsgform">
                   <?php if ($error) { ?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } else if ($msg) { ?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php } ?>
-
-
                   <div class="form-group">
-                    <label for="name">Your Name</label>
+                    <label>Your Name</label>
                     <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                     <div class="validate"></div>
                   </div>
                   <div class="form-row">
                     <div class="form-group col-md-6">
-                      <label for="name">Your Email</label>
-                      <input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Please enter a valid email" />
-                      <div class="validate"></div>
+                      <label>Your Email</label>
+                        <input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Please enter a valid email" />
+                        <div class="validate"></div>
                     </div>
                     <div class="form-group col-md-6">
-                      <label for="name">Your Phone</label>
-                      <input type="number" name="phone" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter valid phone number" />
+                      <label>Your Phone</label>
+                      <input type="text" name="phone" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter valid phone number" />
                       <div class="validate"></div>
                     </div>
                   </div>
-                  <div class="form-group">
-                    <label for="name">Message</label>
-                    <textarea class="form-control" name="message" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
-                    <div class="validate"></div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label class="inputLabel">From</label>
+                      <input class="date" id="datepicker" type="text" placeholder="dd-mm-yyyy" name="fromdate" required="">
+                      <label class="inputLabel">To</label>
+                      <input class="date" id="datepicker1" type="text" placeholder="dd-mm-yyyy" name="todate" required="">
+                    </div>
                   </div>
-                  <div class="mb-3">
-                    <div class="loading">Loading</div>
-                    <div class="sent-message">Your message has been sent. Thank you!</div>
-                  </div>
-                  <div class="text-center"><button type="submit" name="submitnow">Send Message</button></div>
+                  <div class="text-center"><button type="submit" name="submit">Create Booking</button></div>
                 </form>
               </section>
               <!-- Booking section  -->
 
             </div>
-
-
           </div>
         </section>
     <?php }

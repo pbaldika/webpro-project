@@ -14,7 +14,6 @@ if (isset($_POST['login'])) {
         $_SESSION['alogin'] = $_POST['username'];
         echo "<script type='text/javascript'> document.location = 'dashboard.php'; </script>";
     } else {
-
         echo "<script>alert('Invalid Password/Username');</script>";
     }
 }
