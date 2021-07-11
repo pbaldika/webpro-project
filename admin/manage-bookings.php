@@ -2,7 +2,7 @@
 session_start();
 error_reporting(0);
 include('includes/config.php');
-if (strlen($_SESSION['alogin']) == 1) {
+if (strlen($_SESSION['alogin']) == 0) {
     header('location:dashboard.php');
 } else {
     // code for cancel
@@ -16,17 +16,6 @@ if (strlen($_SESSION['alogin']) == 1) {
         $query->execute();
 
         $msg = "Booking Cancelled successfully";
-    }
-
-    if (isset($_REQUEST['bckid'])) {
-        $bcid = intval($_GET['bckid']);
-        $status = 0;
-        $sql = "UPDATE tblbooking SET status=:status WHERE BookingId=:bcid";
-        $query = $dbh->prepare($sql);
-        $query->bindParam(':status', $status, PDO::PARAM_STR);
-        $query->bindParam(':bcid', $bcid, PDO::PARAM_STR);
-        $query->execute();
-        $msg = "Booking Confirm successfully";
     }
 ?>
 
@@ -93,7 +82,7 @@ if (strlen($_SESSION['alogin']) == 1) {
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php $sql = "SELECT booking.booking_id as bookid,full_name as fname,phone as mnumber,email as email,packages.pkg_name as pckname,packages.pkg_id as pid,booking.in_date as fdate,booking.out_date as tdate,booking.status as status, from booking join packages on packages.pkg_id=booking.pkg_id";
+                                <?php $sql = "SELECT * from booking join packages where booking.pkg_id=packages.pkg_id";
                                 $query = $dbh->prepare($sql);
                                 $query->execute();
                                 $results = $query->fetchAll(PDO::FETCH_OBJ);
@@ -101,12 +90,12 @@ if (strlen($_SESSION['alogin']) == 1) {
                                 if ($query->rowCount() > 0) {
                                     foreach ($results as $result) { ?>
                                         <tr>
-                                            <td>#BK-<?php echo htmlentities($result->bookid); ?></td>
-                                            <td><?php echo htmlentities($result->fname); ?></td>
-                                            <td><?php echo htmlentities($result->mnumber); ?></td>
+                                            <td><?php echo htmlentities($result->booking_id); ?></td>
+                                            <td><?php echo htmlentities($result->full_name); ?></td>
+                                            <td><?php echo htmlentities($result->phone); ?></td>
                                             <td><?php echo htmlentities($result->email); ?></td>
-                                            <td><?php echo htmlentities($result->pckname); ?></a></td>
-                                            <td><?php echo htmlentities($result->fdate); ?> to <?php echo htmlentities($result->tdate); ?></td>
+                                            <td><?php echo htmlentities($result->pkg_name); ?></td>
+                                            <td><?php echo htmlentities($result->in_date); ?> to <?php echo htmlentities($result->out_date); ?></td>
                                             <td><?php 
                                                 if ($result->status == 0) {
                                                     echo "Confirmed";
@@ -116,9 +105,9 @@ if (strlen($_SESSION['alogin']) == 1) {
                                                 }
                                                 ?></td>
                                             <?php if ($result->status == 1) { ?>
-                                                <td>Cancelled</td>
+                                                <td>-</td>
                                             <?php } else { ?>
-                                                <td><a href="manage-bookings.php?bkid=<?php echo htmlentities($result->bookid); ?>" onclick="return confirm('Do you really want to cancel booking')">Cancel</a> / <a href="manage-bookings.php?bckid=<?php echo htmlentities($result->bookid); ?>" onclick="return confirm('booking has been confirmed')">Confirm</a></td>
+                                                <td><a href="manage-bookings.php?bkid=<?php echo htmlentities($result->booking_id); ?>" onclick="return confirm('Do you really want to cancel booking')"><button type="button" class="btn btn-primary">cancel booking</button></a></td>
                                             <?php } ?>
                                         </tr>
                                 <?php $cnt = $cnt + 1;
