@@ -90,7 +90,7 @@ if (isset($_POST['submit1'])) {
               <div class="address">
                 <i class="icofont-google-map"></i>
                 <h4>Location:</h4>
-                <p>A108 Jalan Tun Abdul Rahman, Bukit Jalil, Kuala Lumpur, 535022</p>
+                <p>241, Jln Tun Razak, Imbi, 50400 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur</p>
               </div>
 
               <div class="email">
@@ -105,7 +105,7 @@ if (isset($_POST['submit1'])) {
                 <p>+60 4206 92119 66</p>
               </div>
 
-              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3161.948077583335!2d101.72309064960953!3d3.146110117351204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc363174e5383d%3A0xf887fce916995b4!2sWisma%20TechnipFMC!5e0!3m2!1sen!2smy!4v1626018115869!5m2!1sen!2smy" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
 
           </div>
