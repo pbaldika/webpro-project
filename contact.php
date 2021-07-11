@@ -112,7 +112,7 @@ if (isset($_POST['submit1'])) {
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
 
-            <form method="post" role="form" class="php-email-form" name="enquiry">
+            <form method="post" role="form"  name="enquiry">
 
               <?php if ($error) { ?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } else if ($msg) { ?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php } ?>
 
