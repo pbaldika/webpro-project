@@ -157,8 +157,8 @@ if (isset($_POST['submit'])) {
 
               <!-- Booking section  -->
               <section id="booking" class="contact">
-                <h2>Book Now</h2>
-                <form name="booking" method="post" class="php-email-form" name="bookinsgform">
+                <h2><b>Book Now</b></h2>
+                <form name="booking" method="POST" class="php-email-form" name="bookinsgform">
                   <?php if ($error) { ?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } else if ($msg) { ?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php } ?>
                   <div class="form-group">
                     <label>Your Name</label>
@@ -177,19 +177,19 @@ if (isset($_POST['submit'])) {
                       <div class="validate"></div>
                     </div>
                   </div>
-                  <div class="form-row">
-
+                  <div class="form-row" class="form-group col-md-6">
                     <div action="/action_page.php" class="form-group col-md-6">
-                      <label for="from">Date From:</label>
-                      <input type="date" id="from" name="fromdate">
+                      <label for="birthday">Date From:</label>
+                      <input type="date" id="fromdate" name="fromdate">
                     </div>
 
                     <div action="/action_page.php" class="form-group col-md-6">
-                      <label for="to">Date To:</label>
-                      <input type="date" id="to" name="todate">
+                      <label for="todate">Date To:</label>
+                      <input type="date" id="todate" name="todate">
                     </div>
-                    
+                
                   </div>
+                  <br>
                   <div class="text-center"><button type="submit" name="submit">Create Booking</button></div>
                 </form>
               </section>
