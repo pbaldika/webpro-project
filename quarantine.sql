@@ -72,7 +72,11 @@ CREATE TABLE `hotels` (
   `update_date` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO `hotels` (`htl_id`, `htl_name`, `htl_location`, `htl_image`, `creation_date`, `update_date`) VALUES (NULL, 'Central Hotel KLIA', 'KLIA Terminal 2', 'hotel1.jpg', '2021-07-09 14:03:00', NULL), (NULL, 'Central Hotel Sepang', 'Sepang', 'hotel2.jpg', '2021-07-09 14:03:00', NULL), (NULL, 'Central Hotel Bukit Bintang', 'Bukit Bintang', 'hotel3.jpg', '2021-07-11 17:12:18', NULL), (NULL, 'Central Hotel Chow Kit', 'Chow Kit', 'hotel4.jpg', '2021-07-11 18:07:36', NULL) 
+INSERT INTO `hotels` (`htl_id`, `htl_name`, `htl_location`, `htl_image`, `creation_date`, `update_date`) VALUES 
+(NULL, 'Central Hotel KLIA', 'KLIA Terminal 2', 'hotel1.jpg', '2021-07-09 14:03:00', NULL), 
+(NULL, 'Central Hotel Sepang', 'Sepang', 'hotel2.jpg', '2021-07-09 14:03:00', NULL), 
+(NULL, 'Central Hotel Bukit Bintang', 'Bukit Bintang', 'hotel3.jpg', '2021-07-11 17:12:18', NULL), 
+(NULL, 'Central Hotel Chow Kit', 'Chow Kit', 'hotel4.jpg', '2021-07-11 18:07:36', NULL) 
 
 -- --------------------------------------------------------
 
@@ -111,6 +115,9 @@ CREATE TABLE `contact` (
   `user_message` varchar(1000) DEFAULT NULL,
   `posting_date` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `contact` (`contact_id`, `user_name`, `user_email`, `user_subject`, `user_message`, `posting_date`) VALUES
+(1, 'Mark', 'mark@gmail.com', 'question about service', 'this is an enquiry message from a customer', '2021-07-09 14:03:00');
 
 ALTER TABLE `contact`
   ADD PRIMARY KEY (`contact_id`);

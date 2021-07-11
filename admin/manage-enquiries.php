@@ -11,7 +11,7 @@ if (strlen($_SESSION['alogin']) == 0) {
 <html lang="en">
 
 <head>
-    <title>Manage Hotels</title>
+    <title>Manage Enquiries</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -46,30 +46,31 @@ if (strlen($_SESSION['alogin']) == 0) {
                 <br>
                 <ul class="nav nav-pills nav-stacked">
                     <li><a href="dashboard.php">Dashboard</a></li>
-                    <li class="active"><a href="manage-hotels.php">Manage Hotels</a></li>
+                    <li><a href="manage-hotels.php">Manage Hotels</a></li>
                     <li><a href="manage-packages.php">Manage Packages</a></li>
                     <li><a href="manage-bookings.php">Manage Bookings</a></li>
-                    <li><a href="manage-bookings.php">Manage Enquiries</a></li>
+                    <li class="active"><a href="manage-bookings.php">Manage Enquiries</a></li>
                 </ul><br>
             </div>
             <br>
 
             <div class="col-sm-9">
                 <div class="well">
-                    <h4>Manage Hotels</h4><br>
+                    <h4>Manage Enquiries</h4><br>
                     <table class="table table-bordered">
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Hotel Name</th>
-                                <th>Location</th>
-                                <th>Hotel Image</th>
-                                <th>Creation Date</th>
+                                <th>Full Name</th>
+                                <th>Email</th>
+                                <th>Subject</th>
+                                <th>Message</th>
+                                <th>Posted on</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $sql = "SELECT * from hotels";
+                            <?php $sql = "SELECT * from contact";
                             $query = $dbh->prepare($sql);
                             //$query -> bindParam(':city', $city, PDO::PARAM_STR);
                             $query->execute();

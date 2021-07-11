@@ -49,6 +49,7 @@ if (strlen($_SESSION['alogin']) == 0) {
                     <li><a href="manage-hotels.php">Manage Hotels</a></li>
                     <li class="active"><a href="manage-packages.php">Manage Packages</a></li>
                     <li><a href="manage-bookings.php">Manage Bookings</a></li>
+                    <li><a href="manage-bookings.php">Manage Enquiries</a></li>
                 </ul><br>
             </div>
             <br>
