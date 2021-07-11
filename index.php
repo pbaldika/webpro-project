@@ -130,7 +130,7 @@ include('assets/includes/config.php');
   </section><!-- End Featured Services Section -->
 
 
-    <!-- ======= Portfolio Section ======= -->
+   <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio">
       <div class="container">
 
@@ -153,7 +153,7 @@ include('assets/includes/config.php');
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <div class="portfolio-wrap">
-              <img src="assets/img/pkg_image/package1.jpg" class="img-fluid" alt="">
+              <img src="admin/img/pkgimage/package1.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>Package 1</h4>
                 <p>Standard</p>
@@ -166,7 +166,7 @@ include('assets/includes/config.php');
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <div class="portfolio-wrap">
-              <img src="assets/img/pkg_image/package2.jpg" class="img-fluid" alt="">
+              <img src="admin/img/pkgimage/package2.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>Package 2</h4>
                 <p>Premier</p>
@@ -179,7 +179,7 @@ include('assets/includes/config.php');
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <div class="portfolio-wrap">
-              <img src="assets/img/pkg_image/package3.jpg" class="img-fluid" alt="">
+              <img src="admin/img/pkgimage/package3.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>Package 3</h4>
                 <p>Luxury</p>
