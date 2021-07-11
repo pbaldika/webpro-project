@@ -98,7 +98,7 @@ include('assets/includes/config.php');
         <div class="portfolio-details-container">
 
           <div>
-            <img src="assets/img/pkg_image/<?php echo htmlentities($result->pkg_image); ?>" class="img-fluid" alt="">
+            <img src="admin/img/pkgimage/<?php echo htmlentities($result->pkg_image); ?>" class="img-fluid" alt="">
           </div>
 
           <div class="portfolio-info">

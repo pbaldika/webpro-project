@@ -80,7 +80,7 @@ include('assets/includes/config.php');
 
               <div class="package-item">
                 <a href="package-details.php?pkg_id=<?php echo htmlentities($result->pkg_id);?>">
-                  <img src="assets/img/pkg_image/<?php echo htmlentities($result->pkg_image); ?>" class="package-img" height="165px" width="200px">
+                  <img src="admin/img/pkgimage/<?php echo htmlentities($result->pkg_image); ?>" class="package-img" height="165px" width="200px">
                 </a>
                 <div class="content">
                   <a href="package-details.php?pkg_id=<?php echo htmlentities($result->pkg_id);?>">

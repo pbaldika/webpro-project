@@ -5,7 +5,7 @@ include('includes/config.php');
 if (strlen($_SESSION['alogin']) == 0) {
     header('location:dashboard.php');
 } else {
-    $pid = intval($_GET['hid']);
+    $hid = intval($_GET['hid']);
     if (isset($_POST['submit'])) {
         $hname = $_POST['hotelname'];
         $hlocation = $_POST['hotellocation'];

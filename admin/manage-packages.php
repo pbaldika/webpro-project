@@ -72,7 +72,7 @@ if (strlen($_SESSION['alogin']) == 0) {
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $sql = "SELECT pkg_name as pname,pkg_type as type,pkg_price as price,pkg_features as features,pkg_details as details, pkg_image as image, packages.creation_date as pcreate, hotels.htl_name as hname from packages join hotels on hotels.htl_id=packages.htl_id";
+                            <?php $sql = "SELECT packages.pkg_id as pid,pkg_name as pname,pkg_type as type,pkg_price as price,pkg_features as features,pkg_details as details, pkg_image as image, packages.creation_date as pcreate, hotels.htl_name as hname from packages join hotels on hotels.htl_id=packages.htl_id";
                             $query = $dbh->prepare($sql);
                             $query->execute();
                             $results = $query->fetchAll(PDO::FETCH_OBJ);
@@ -89,7 +89,7 @@ if (strlen($_SESSION['alogin']) == 0) {
                                         <td><?php echo htmlentities($result->details); ?></td>
                                         <td><?php echo htmlentities($result->image); ?></td>
                                         <td><?php echo htmlentities($result->pcreate); ?></td>
-                                        <td><a href="update-package.php?pid=<?php echo htmlentities($result->pkg_id); ?>"><button type="button" class="btn btn-primary btn-block">Edit</button></a></td>
+                                        <td><a href="update-package.php?pid=<?php echo htmlentities($result->pid); ?>"><button type="button" class="btn btn-primary btn-block">Edit</button></a></td>
                                     </tr>
                             <?php $cnt = $cnt + 1;
                                 }

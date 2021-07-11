@@ -26,7 +26,6 @@ if (strlen($_SESSION['alogin']) == 0) {
 		$query->execute();
 		$msg = "Package Updated Successfully";
 	}
-
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -132,7 +131,7 @@ if (strlen($_SESSION['alogin']) == 0) {
                                             <div class="form-group">
                                                 <label for="focusedinput" class="col-sm-2 control-label">Package Image</label>
                                                 <div class="col-sm-8">
-                                                    <img src="img/<?php echo htmlentities($result->pkg_image); ?>" width="200">&nbsp;&nbsp;&nbsp;<a href="change-pkg-image.php?imgid=<?php echo htmlentities($result->pkg_image); ?>">Change Image</a>
+                                                    <img src="img/pkgimage/<?php echo htmlentities($result->pkg_image); ?>" width="200">&nbsp;&nbsp;&nbsp;<a href="change-pkg-image.php?imgid=<?php echo htmlentities($result->pkg_image); ?>">Change Image</a>
                                                 </div>
                                             </div>
                                             <div class="form-group">
