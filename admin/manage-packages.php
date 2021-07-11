@@ -89,7 +89,7 @@ if (strlen($_SESSION['alogin']) == 0) {
                                         <td><?php echo htmlentities($result->details); ?></td>
                                         <td><?php echo htmlentities($result->image); ?></td>
                                         <td><?php echo htmlentities($result->pcreate); ?></td>
-                                        <td><a href="update-package.php?pid=<?php echo htmlentities($result->pid); ?>"><button type="button" class="btn btn-primary btn-block">Edit</button></a></td>
+                                        <td><a href="update-package.php?pid=<?php echo htmlentities($result->pid); ?>"><button type="button" class="btn btn-primary">Edit</button></a></td>
                                     </tr>
                             <?php $cnt = $cnt + 1;
                                 }

@@ -82,7 +82,7 @@ if (strlen($_SESSION['alogin']) == 0) {
                                         <td><?php echo htmlentities($result->htl_location); ?></td>
                                         <td><?php echo htmlentities($result->htl_image); ?></td>
                                         <td><?php echo htmlentities($result->creation_date); ?></td>
-                                        <td><a href="update-hotel.php?hid=<?php echo htmlentities($result->htl_id); ?>"><button type="button" class="btn btn-primary btn-block">Edit</button></a></td>
+                                        <td><a href="update-hotel.php?hid=<?php echo htmlentities($result->htl_id); ?>"><button type="button" class="btn btn-primary">Edit</button></a></td>
                                     </tr>
                             <?php $cnt = $cnt + 1;
                                 }
