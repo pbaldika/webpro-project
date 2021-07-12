@@ -105,9 +105,6 @@ if (isset($_POST['submit'])) {
 
     <!-- ======= Package Details Section ======= -->
 
-    <!-- End Package Details Section -->
-
-    <!-- coba php -->
     <?php if ($error) { ?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } else if ($msg) { ?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php } ?>
     <?php
     $pid = intval($_GET['pkgid']);
