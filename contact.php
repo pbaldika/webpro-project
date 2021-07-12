@@ -7,12 +7,14 @@ if (isset($_POST['submit1'])) {
   $email = $_POST['email'];
   $csubject = $_POST['subject'];
   $cmessage = $_POST['message'];
-  $sql = "INSERT INTO contact(user_name,user_email,user_subject,user_message) VALUES(:fname,:email,:csubject,:cmessage)";
+  $datenow = date('Y-m-d H:i:s');
+  $sql = "INSERT INTO contact(user_name,user_email,user_subject,user_message,posting_date) VALUES(:fname,:email,:csubject,:cmessage,:datenow)";
   $query = $dbh->prepare($sql);
   $query->bindParam(':fname', $fname, PDO::PARAM_STR);
   $query->bindParam(':email', $email, PDO::PARAM_STR);
   $query->bindParam(':csubject', $csubject, PDO::PARAM_STR);
   $query->bindParam(':cmessage', $cmessage, PDO::PARAM_STR);
+  $query->bindParam(':datenow', $datenow, PDO::PARAM_STR);
   $query->execute();
   $lastInsertId = $dbh->lastInsertId();
   if ($lastInsertId) {
