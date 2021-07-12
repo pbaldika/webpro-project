@@ -57,6 +57,8 @@ if (strlen($_SESSION['alogin']) == 0) {
             <div class="col-sm-9">
                 <div class="well">
                     <h4>Manage Hotels</h4><br>
+                    <a href="create-hotel.php"><button type="button" class="btn btn-success">Create Hotel</button></a>
+                    <br><br>
                     <table class="table table-bordered">
                         <thead>
                             <tr>
