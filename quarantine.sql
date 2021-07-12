@@ -174,6 +174,12 @@ ALTER TABLE `admin`
 --
 -- AUTO_INCREMENT for table `booking`
 --
+ALTER TABLE `packages`
+  MODIFY `pkg_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `booking`
+--
 ALTER TABLE `booking`
   MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT;
 

@@ -29,7 +29,6 @@ if (strlen($_SESSION['alogin']) == 0) {
             height: 100%;
             width: auto;
         }
-
         /* On small screens, set height to 'auto' for the grid */
         @media screen and (max-width: 767px) {
             .row.content {
@@ -57,6 +56,8 @@ if (strlen($_SESSION['alogin']) == 0) {
             <div class="col-sm-9">
                 <div class="well">
                     <h4>Manage Packages</h4><br>
+                    <a href="create-package.php"><button type="button" class="btn btn-success">Create Package</button></a>
+                    <br><br>
                     <table class="table table-bordered">
                         <thead>
                             <tr>
@@ -85,7 +86,7 @@ if (strlen($_SESSION['alogin']) == 0) {
                                         <td><?php echo htmlentities($result->pname); ?></td>
                                         <td><?php echo htmlentities($result->type); ?></td>
                                         <td><?php echo htmlentities($result->hname); ?></td>
-                                        <td>$<?php echo htmlentities($result->price); ?></td>
+                                        <td>MYR <?php echo htmlentities($result->price); ?></td>
                                         <td><?php echo htmlentities($result->features); ?></td>
                                         <td><?php echo htmlentities($result->details); ?></td>
                                         <td><?php echo htmlentities($result->image); ?></td>
