@@ -88,13 +88,13 @@ if (strlen($_SESSION['alogin']) == 0) {
                                             <div class="form-group">
                                                 <label for="focusedinput" class="col-sm-2 control-label">Hotel Name</label>
                                                 <div class="col-sm-8">
-                                                    <input type="text" class="form-control1" name="hotelname" id="hotelname" placeholder="name of hotel" value="<?php echo htmlentities($result->htl_name); ?>" required>
+                                                    <input type="text" class="form-control" name="hotelname" id="hotelname" placeholder="name of hotel" value="<?php echo htmlentities($result->htl_name); ?>" required>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label for="focusedinput" class="col-sm-2 control-label">Hotel Location</label>
                                                 <div class="col-sm-8">
-                                                    <input type="text" class="form-control1" name="hotellocation" id="hotellocation" placeholder="location of hotel" value="<?php echo htmlentities($result->htl_location); ?>" required>
+                                                    <input type="text" class="form-control" name="hotellocation" id="hotellocation" placeholder="location of hotel" value="<?php echo htmlentities($result->htl_location); ?>" required>
                                                 </div>
                                             </div>
                                             <div class="form-group">

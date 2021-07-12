@@ -121,24 +121,20 @@ if (isset($_POST['submit1'])) {
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="name">Your Name</label>
-                  <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                  <div class="validate"></div>
+                  <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" required>
                 </div>
                 <div class="form-group col-md-6">
                   <label for="name">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Please enter a valid email" />
-                  <div class="validate"></div>
+                  <input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Please enter a valid email" required>
                 </div>
               </div>
               <div class="form-group">
                 <label for="name">Subject</label>
-                <input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                <div class="validate"></div>
+                <input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" required>
               </div>
               <div class="form-group">
                 <label for="name">Message</label>
-                <textarea class="form-control" name="message" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
-                <div class="validate"></div>
+                <textarea class="form-control" name="message" rows="10" data-rule="required" data-msg="Please write something for us" required></textarea>
               </div>
               <div class="mb-3">
                 <div class="loading">Loading</div>

@@ -92,37 +92,37 @@ if (strlen($_SESSION['alogin']) == 0) {
                                     <div class="form-group">
                                         <label for="focusedinput" class="col-sm-2 control-label">Package Name</label>
                                         <div class="col-sm-8">
-                                            <input type="text" class="form-control1" name="packagename" id="packagename" placeholder="name of package" required>
+                                            <input type="text" class="form-control" name="packagename" id="packagename" placeholder="name of package" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="focusedinput" class="col-sm-2 control-label">Package Type</label>
                                         <div class="col-sm-8">
-                                            <input type="text" class="form-control1" name="packagetype" id="packagetype" placeholder="standard/premier/luxury" required>
+                                            <input type="text" class="form-control" name="packagetype" id="packagetype" placeholder="standard/premier/luxury" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="focusedinput" class="col-sm-2 control-label">Hotel Id</label>
                                         <div class="col-sm-8">
-                                            <input type="text" class="form-control1" name="packagehotel" id="packagehotel" placeholder="id of associated hotel" required>
+                                            <input type="text" class="form-control" name="packagehotel" id="packagehotel" placeholder="id of associated hotel" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="focusedinput" class="col-sm-2 control-label">Package Price</label>
+                                        <label for="focusedinput" class="col-sm-2 control-label">Package Price (MYR)</label>
                                         <div class="col-sm-8">
-                                            <input type="text" class="form-control1" name="packageprice" id="packageprice" placeholder="price of package" required>
+                                            <input type="text" class="form-control" name="packageprice" id="packageprice" placeholder="price of package" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="focusedinput" class="col-sm-2 control-label">Package Features</label>
                                         <div class="col-sm-8">
-                                            <input type="text" class="form-control1" name="packagefeatures" id="packagefeatures" placeholder="features of the package" required>
+                                            <textarea class="form-control" name="packagefeatures" id="packagefeatures" rows="3" placeholder="features of the package" required></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="focusedinput" class="col-sm-2 control-label">Package Details</label>
                                         <div class="col-sm-8">
-                                            <input type="text" class="form-control1" name="packagedetails" id="packagedetails" placeholder="details of the package" required>
+                                            <textarea class="form-control" name="packagedetails" id="packagedetails" placeholder="details of the package" required></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group">

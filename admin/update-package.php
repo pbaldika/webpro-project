@@ -96,37 +96,37 @@ if (strlen($_SESSION['alogin']) == 0) {
                                             <div class="form-group">
                                                 <label for="focusedinput" class="col-sm-2 control-label">Package Name</label>
                                                 <div class="col-sm-8">
-                                                    <input type="text" class="form-control1" name="packagename" id="packagename" placeholder="name of package" value="<?php echo htmlentities($result->pkg_name); ?>" required>
+                                                    <input type="text" class="form-control" name="packagename" id="packagename" placeholder="name of package" value="<?php echo htmlentities($result->pkg_name); ?>" required>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label for="focusedinput" class="col-sm-2 control-label">Package Type</label>
                                                 <div class="col-sm-8">
-                                                    <input type="text" class="form-control1" name="packagetype" id="packagetype" placeholder="standard/premier/luxury" value="<?php echo htmlentities($result->pkg_type); ?>" required>
+                                                    <input type="text" class="form-control" name="packagetype" id="packagetype" placeholder="standard/premier/luxury" value="<?php echo htmlentities($result->pkg_type); ?>" required>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label for="focusedinput" class="col-sm-2 control-label">Hotel Id</label>
                                                 <div class="col-sm-8">
-                                                    <input type="text" class="form-control1" name="packagehotel" id="packagehotel" placeholder="id of hotel associated with package" value="<?php echo htmlentities($result->htl_id); ?>" required>
+                                                    <input type="text" class="form-control" name="packagehotel" id="packagehotel" placeholder="id of hotel associated with package" value="<?php echo htmlentities($result->htl_id); ?>" required>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label for="focusedinput" class="col-sm-2 control-label">Package Price</label>
                                                 <div class="col-sm-8">
-                                                    <input type="text" class="form-control1" name="packageprice" id="packageprice" placeholder="price of package" value="<?php echo htmlentities($result->pkg_price); ?>" required>
+                                                    <input type="text" class="form-control" name="packageprice" id="packageprice" placeholder="price of package" value="<?php echo htmlentities($result->pkg_price); ?>" required>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label for="focusedinput" class="col-sm-2 control-label">Package Features</label>
                                                 <div class="col-sm-8">
-                                                    <input type="text" class="form-control1" name="packagefeatures" id="packagefeatures" placeholder="features of the package" value="<?php echo htmlentities($result->pkg_features); ?>" required>
+                                                    <input type="text" class="form-control" name="packagefeatures" id="packagefeatures" placeholder="features of the package" value="<?php echo htmlentities($result->pkg_features); ?>" required>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label for="focusedinput" class="col-sm-2 control-label">Package Details</label>
                                                 <div class="col-sm-8">
-                                                    <input type="text" class="form-control1" name="packagedetails" id="packagedetails" placeholder="details of the package" value="<?php echo htmlentities($result->pkg_details); ?>" required>
+                                                    <input type="text" class="form-control" name="packagedetails" id="packagedetails" placeholder="details of the package" value="<?php echo htmlentities($result->pkg_details); ?>" required>
                                                 </div>
                                             </div>
                                             <div class="form-group">

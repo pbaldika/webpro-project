@@ -162,30 +162,27 @@ if (isset($_POST['submit'])) {
                   <?php if ($error) { ?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } else if ($msg) { ?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php } ?>
                   <div class="form-group">
                     <label>Your Name</label>
-                    <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                    <div class="validate"></div>
+                    <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" required>
                   </div>
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <label>Your Email</label>
-                      <input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Please enter a valid email" />
-                      <div class="validate"></div>
+                      <input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Please enter a valid email" required>
                     </div>
                     <div class="form-group col-md-6">
                       <label>Your Phone</label>
-                      <input type="text" name="phone" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter valid phone number" />
-                      <div class="validate"></div>
+                      <input type="text" name="phone" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter valid phone number" required>
                     </div>
                   </div>
                   <div class="form-row" class="form-group col-md-6">
                     <div action="/action_page.php" class="form-group col-md-6">
                       <label for="birthday">Date From:</label>
-                      <input type="date" id="fromdate" name="fromdate">
+                      <input type="date" id="fromdate" name="fromdate" required>
                     </div>
 
                     <div action="/action_page.php" class="form-group col-md-6">
                       <label for="todate">Date To:</label>
-                      <input type="date" id="todate" name="todate">
+                      <input type="date" id="todate" name="todate" required>
                     </div>
                 
                   </div>
