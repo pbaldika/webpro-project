@@ -110,7 +110,7 @@ if (isset($_POST['submit'])) {
     <!-- coba php -->
     <?php if ($error) { ?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } else if ($msg) { ?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php } ?>
     <?php
-    $pid = intval($_GET['pkg_id']);
+    $pid = intval($_GET['pkgid']);
     $sql = "SELECT * from packages where pkg_id=:pid";
     $query = $dbh->prepare($sql);
     $query->bindParam(':pid', $pid, PDO::PARAM_STR);
