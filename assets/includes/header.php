@@ -32,7 +32,7 @@
             <li><a href="hotel-list.php">Locations</a></li>
         </ul>
         </nav><!-- .nav-menu -->
-        <a href="/admin/admin-login.php" class="get-started-btn scrollto">Admin Login</a>
+        <a href="admin/admin-login.php" class="get-started-btn scrollto">Admin Login</a>
     </div>
     </header>
 <?php } ?>
