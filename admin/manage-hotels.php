@@ -73,7 +73,6 @@ if (strlen($_SESSION['alogin']) == 0) {
                         <tbody>
                             <?php $sql = "SELECT * from hotels";
                             $query = $dbh->prepare($sql);
-                            //$query -> bindParam(':city', $city, PDO::PARAM_STR);
                             $query->execute();
                             $results = $query->fetchAll(PDO::FETCH_OBJ);
                             $cnt = 1;

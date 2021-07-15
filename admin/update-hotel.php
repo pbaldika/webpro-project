@@ -12,7 +12,7 @@ if (strlen($_SESSION['alogin']) == 0) {
         $himage = $_FILES["hotelimage"]["name"];
         $sql = "update hotels set htl_name=:hname, htl_location=:hlocation where htl_id=:hid";
         $query = $dbh->prepare($sql);
-        $query->bindParam(':hname', $pname, PDO::PARAM_STR);
+        $query->bindParam(':hname', $hname, PDO::PARAM_STR);
         $query->bindParam(':hlocation', $hlocation, PDO::PARAM_STR);
         $query->bindParam(':hid', $hid, PDO::PARAM_STR);
         $query->execute();

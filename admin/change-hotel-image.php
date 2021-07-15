@@ -16,7 +16,7 @@ if (strlen($_SESSION['alogin']) == 0) {
         $query->bindParam(':imgid', $imgid, PDO::PARAM_STR);
         $query->bindParam(':himage', $himage, PDO::PARAM_STR);
         $query->execute();
-        $msg = "Hotel Updated Successfully";
+        $msg = "Image Updated Successfully";
     }
 ?>
     <!DOCTYPE html>
@@ -93,7 +93,7 @@ if (strlen($_SESSION['alogin']) == 0) {
                                             <div class="form-group">
                                                 <label for="focusedinput" class="col-sm-2 control-label">New Image</label>
                                                 <div class="col-sm-8">
-                                                    <input type="file" name="hotelimage" id="hotelimage" required>
+                                                    <input type="file" name="hotelimage" id="hotelimage">
                                                 </div>
                                             </div>
                                     <?php }
@@ -104,6 +104,7 @@ if (strlen($_SESSION['alogin']) == 0) {
                                             <button type="submit" name="submit" class="btn-primary btn">Update</button>
                                         </div>
                                     </div>
+
                             </div>
                         </div>
                     </div>
